@@ -7,7 +7,10 @@
                     <div class="footer-logo mb-40">
                         <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
                     </div>
-                      <div class="textwidget white-color pb-40"><p>We denounce with righteous indig nation in and dislike men who are so beguiled and to demo realized by the, so blinded by desire, that they cannot foresee.</p>
+                      <div class="textwidget white-color pb-40"><p>
+                          We denounce with righteous indig nation in and dislike men who are 
+                          so beguiled and to demo realized by the, so blinded by desire, that 
+                          they cannot foresee.</p>
                       </div>
                       <ul class="footer-social md-mb-30">  
                           <li> 
