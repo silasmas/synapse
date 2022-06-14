@@ -3,7 +3,7 @@
     <head>
         <!-- meta tag -->
         <meta charset="utf-8">
-        <title>Momentum-academie</title>
+        <title>{{ config('app.name') }}</title>
         <meta name="description" content="">
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
