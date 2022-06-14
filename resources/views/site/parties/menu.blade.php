@@ -6,14 +6,14 @@
        <div class="loader-container">
            <div class='loader-icon'><img src="{{ asset('assets/images/logo.png') }}" alt="Group synapse"></div>
        </div>
-   </div>              
+   </div>
 </div>
 <!--Preloader area end here-->
 
 <!-- Main content Start -->
 <div class="main-content">
 
-    
+
 <!--Full width header Start-->
 <div class="full-width-header">
     <!--Header Start-->
@@ -59,10 +59,14 @@
         <div class="menu-area menu-sticky">
             <div class="container custom">
                 <div class="row-table">
-                    <div class="col-cell header-logo">                                  
+                    <div class="col-cell header-logo">
                         <div class="logo-area">
                             <a href="index.html">
-                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">  
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                                <div class="brand">
+                                    <span>Groupe</span>
+                                    <span>Synapse</span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -71,7 +75,7 @@
                             <div class="main-menu">
                                 <nav class="rs-menu hidden-md">
                                     <ul class="nav-menu">
-                                        <li class="current-menu-item"><a href="#rs-header">Accueil</a></li>
+                                        <li><a href="#rs-header" class="active">Accueil</a></li>
                                         <li><a href="#rs-about">A propo</a> </li>
                                         <li><a href="#rs-services">Branches</a> </li>
                                         <li><a href="#rs-blog">Partenaires</a> </li>
@@ -84,11 +88,6 @@
                     <div class="col-cell">
                         <div class="expand-btn-inner">
                             <ul>
-                                <li class="search-parent">
-                                    <a class="hidden-xs rs-search" data-bs-toggle="modal" data-bs-target="#searchModal" href="#">
-                                        <i class="flaticon-search"></i>
-                                    </a>
-                                </li>
                                 <li class="humburger">
                                     <a id="nav-expander" class="nav-expander bar" href="#">
                                         <div class="bar">
@@ -122,7 +121,13 @@
                 </a>
             </div>
             <div class="canvas-logo">
-                <a href="index.html"><img src="{{ asset('assets/images/logo.png') }}" alt="logo"></a>
+                <a href="index.html">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                    <div class="brand">
+                        <span>Groupe</span>
+                        <span>Synapse</span>
+                    </div>
+                </a>
             </div>
             <div class="offcanvas-text">
                 <p>
@@ -220,7 +225,7 @@
                   </div>
             </div>
         </nav>
-        <!-- Canvas Mobile Menu end -->     
+        <!-- Canvas Mobile Menu end -->
     </header>
     <!--Header End-->
 </div>
