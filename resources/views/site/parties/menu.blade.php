@@ -184,7 +184,7 @@
             <ul class="nav-menu onepage-menu">
                 <li class="current-menu-item"><a href="#rs-header">Accueil</a></li>
                 <li><a href="#rs-about">A propo</a> </li>
-                <li><a href="#rs-services">Branches</a> </li>
+                <li><a href="#rs-services">Branches </a> </li>
                 <li><a href="#rs-blog">Partenaires</a> </li>
                 <li><a href="#rs-contact">Contact</a> </li>
             </ul> <!-- //.nav-menu -->
