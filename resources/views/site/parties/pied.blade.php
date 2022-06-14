@@ -24,8 +24,8 @@
             </div>
         </div>
         <!-- Search Modal End -->
-    
-        
+
+
         <!-- modernizr js -->
         <script src="{{ asset('assets/js/modernizr-2.8.3.min.js') }}"></script>
         <!-- jquery latest version -->
@@ -47,7 +47,7 @@
          <!-- waypoints.min js -->
         <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
         <!-- counterup.min js -->
-        <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script> 
+        <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
         <!-- magnific popup js -->
         <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
         <!-- Nivo slider js -->
@@ -59,5 +59,12 @@
         <!-- main js -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <script async src='https://stackwhats.com/pixel/6002827c949da0324b45875d2a52dd'></script>
+        <script>
+            $('.full-width-header .rs-header.style2 .menu-area .main-menu .rs-menu ul.nav-menu li a').click(function(){
+                $('.full-width-header .rs-header.style2 .menu-area .main-menu .rs-menu ul.nav-menu li a').removeClass('active')
+                $(this).addClass('active')
+            })
+
+        </script>
     </body>
 </html>

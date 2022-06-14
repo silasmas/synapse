@@ -5,28 +5,34 @@
             <div class="row">
                 <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
                     <div class="footer-logo mb-40">
-                        <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" alt="">
+                            <div class="brand">
+                                <span>Groupe</span>
+                                <span>Synapse</span>
+                            </div>
+                        </a>
                     </div>
                       <div class="textwidget white-color pb-40"><p>
-                          We denounce with righteous indig nation in and dislike men who are 
-                          so beguiled and to demo realized by the, so blinded by desire, that 
+                          We denounce with righteous indig nation in and dislike men who are
+                          so beguiled and to demo realized by the, so blinded by desire, that
                           they cannot foresee.</p>
                       </div>
-                      <ul class="footer-social md-mb-30">  
-                          <li> 
-                              <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a> 
+                      <ul class="footer-social md-mb-30">
+                          <li>
+                              <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
                           </li>
-                          <li> 
-                              <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a> 
+                          <li>
+                              <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a>
                           </li>
 
-                          <li> 
-                              <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a> 
+                          <li>
+                              <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
                           </li>
-                          <li> 
-                              <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a> 
+                          <li>
+                              <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a>
                           </li>
-                                                                   
+
                       </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10 pl-55 md-pl-15">
@@ -62,7 +68,7 @@
                         <li>
                             <i class="flaticon-clock-1"></i>
                             <div class="desc">
-                                Office Hours: 8AM - 11PM  
+                                Office Hours: 8AM - 11PM
                             </div>
                         </li>
                     </ul>
@@ -79,9 +85,9 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="container">                    
+        <div class="container">
             <div class="row y-middle">
-                
+
                 <div class="col-lg-12">
                     <div class="copyright text-lg-start text-center ">
                         <p>© 2022 Group synapse - Société de Conseil Inc. Tous droits réservés.</p>

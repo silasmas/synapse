@@ -44,118 +44,6 @@
             </div>
             <!-- Slider End -->
 
-            <!-- Premium Services Section Start -->
-            <div class="rs-services style2 gray-bg pt-100 pb-100 md-pt-70 md-pb-70">
-                <div class="container">
-                    <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40">
-                        <div class="first-half">
-                            <div class="sub-text">1ière disposition des domaines</div>
-                            <h2 class="title mb-0 md-pb-20">
-                                Les meilleures solutions pour votre entreprise - <span> ce que nous faisons.</span></h2>
-                        </div>
-                        <div class="last-half">
-                            <p class="desc mb-0 pl-20 md-pl-15">
-                                Plus de 30 ans d'expérience dans le conseil en affaires et en finance,
-                                Solutions informatiques et collaboration avec plus de 5 000 clients dans le monde.
-                                 Chronologies de création du thème métier du conseil digital 2021.</p>
-                        </div>
-                    </div>
-                    <div class="rs-carousel owl-carousel" 
-                        data-loop="true" 
-                        data-items="3" 
-                        data-margin="30" 
-                        data-autoplay="true" 
-                        data-hoverpause="true" 
-                        data-autoplay-timeout="5000" 
-                        data-smart-speed="800" 
-                        data-dots="true" 
-                        data-nav="false" 
-                        data-nav-speed="false" 
-
-                        data-md-device="3" 
-                        data-md-device-nav="false" 
-                        data-md-device-dots="true" 
-                        data-center-mode="false"
-
-                        data-ipad-device2="2" 
-                        data-ipad-device-nav2="false" 
-                        data-ipad-device-dots2="true"
-
-                        data-ipad-device="2" 
-                        data-ipad-device-nav="false" 
-                        data-ipad-device-dots="true" 
-
-                        data-mobile-device="1" 
-                        data-mobile-device-nav="false" 
-                        data-mobile-device-dots="true">  
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/1.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/2.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="tax-strategy.html">Tax Strategy</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/3.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="financial-advices.html">Financial Advices</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/6.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="insurance-strategy.html">Insurance Strategy</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/5.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="start-ups.html">Start Ups</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/6.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="manage-investment.html">Investment</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/1.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Premium Services Section End -->
-
             <!-- About Section Start -->
             <div id="rs-about" class="rs-about style1 pt-100 pb-100 md-pt-70 md-pb-70">
                 <div class="container">
@@ -165,7 +53,7 @@
                                 <div class="sub-text">Qui sommes nous</div>
                                 <h2 class="title mb-23">Nous élaborons vos idées et <span>plans d'affaires.</span></h2>
                                 <p class="desc mb-0">
-                                    Il n'y a pas non plus quelqu'un qui aime ou recherche ou désire obtenir la douleur par lui-même, parce que c'est de la douleur, mais il arrive parfois des circonstances dans lesquelles le travail et la douleur peuvent lui procurer un grand plaisir. Nous l'avons fait avec une juste indignation et n'aimons pas les hommes qui sont si séduits et démoralisés par le thème de l'entreprise de données 2021.   
+                                    Il n'y a pas non plus quelqu'un qui aime ou recherche ou désire obtenir la douleur par lui-même, parce que c'est de la douleur, mais il arrive parfois des circonstances dans lesquelles le travail et la douleur peuvent lui procurer un grand plaisir. Nous l'avons fait avec une juste indignation et n'aimons pas les hommes qui sont si séduits et démoralisés par le thème de l'entreprise de données 2021.
                                 </p>
                            </div>
                             <!-- Skillbar Section Start -->
@@ -175,13 +63,13 @@
                                    <span class="skillbar-title">Business Consulting</span>
                                    <div class="skillbar" data-percent="92">
                                        <p class="skillbar-bar"></p>
-                                       <span class="skill-bar-percent"></span> 
+                                       <span class="skill-bar-percent"></span>
                                    </div>
                                    <!-- Start Skill Bar -->
                                    <span class="skillbar-title">Financial Advices</span>
                                    <div class="skillbar" data-percent="90">
                                        <p class="skillbar-bar"></p>
-                                       <span class="skill-bar-percent"></span> 
+                                       <span class="skill-bar-percent"></span>
                                    </div>
                                 </div>
                                 <div class="col-lg-12 mt-45">
@@ -201,16 +89,137 @@
                                         <h4 class="title mb-0">Ans d'experiences</h4>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <!-- About Section Start -->
 
+            <!-- Premium Services Section Start -->
+            <div class="rs-services style2 gray-bg pt-100 pb-100 md-pt-70 md-pb-70" id="rs-services">
+                <div class="container">
+                    <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40">
+                        <div class="first-half">
+                            <div class="sub-text">1ière disposition des domaines</div>
+                            <h2 class="title mb-0 md-pb-20">
+                                Les meilleures solutions pour votre entreprise - <span> ce que nous faisons.</span></h2>
+                        </div>
+                        <div class="last-half">
+                            <p class="desc mb-0 pl-20 md-pl-15">
+                                Plus de 30 ans d'expérience dans le conseil en affaires et en finance,
+                                Solutions informatiques et collaboration avec plus de 5 000 clients dans le monde.
+                                 Chronologies de création du thème métier du conseil digital 2021.</p>
+                        </div>
+                    </div>
+                    <div class="rs-carousel owl-carousel"
+                        data-loop="true"
+                        data-items="3"
+                        data-margin="30"
+                        data-autoplay="true"
+                        data-hoverpause="true"
+                        data-autoplay-timeout="5000"
+                        data-smart-speed="800"
+                        data-dots="true"
+                        data-nav="false"
+                        data-nav-speed="false"
+
+                        data-md-device="3"
+                        data-md-device-nav="false"
+                        data-md-device-dots="true"
+                        data-center-mode="false"
+
+                        data-ipad-device2="2"
+                        data-ipad-device-nav2="false"
+                        data-ipad-device-dots2="true"
+
+                        data-ipad-device="2"
+                        data-ipad-device-nav="false"
+                        data-ipad-device-dots="true"
+
+                        data-mobile-device="1"
+                        data-mobile-device-nav="false"
+                        data-mobile-device-dots="true">
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/1.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/2.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="tax-strategy.html">Tax Strategy</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/3.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="financial-advices.html">Financial Advices</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/6.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="insurance-strategy.html">Insurance Strategy</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/5.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="start-ups.html">Start Ups</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/6.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="manage-investment.html">Investment</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                        <div class="service-wrap">
+                            <div class="image-part">
+                                <img src="assets/images/services/1.jpg" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
+                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="readon consultant discover mt-4" href="portfolio.html">Plus de branche</a>
+                </div>
+            </div>
+            <!-- Premium Services Section End -->
+
+
             <!-- Services Section Start -->
-            <div id="rs-services" class="rs-services home-style2 gray-bg pt-100 pb-100 md-pt-70 md-pb-70">
+            {{-- <div id="rs-services" class="rs-services home-style2 gray-bg pt-100 pb-100 md-pt-70 md-pb-70">
                 <div class="container">
                     <div class="sec-title2 text-center md-left mb-40">
                         <div class="sub-text">Why Choose Us</div>
@@ -256,7 +265,7 @@
                                         <i class="fa fa-play"></i>
                                     </a>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-lg-4 pl-40 md-pl-15">
                             <div class="services-item mb-45">
@@ -362,13 +371,13 @@
                     </div>
                 </div>
                 <!-- Counter Section End -->
-            </div>
+            </div> --}}
             <!-- Services Section End -->
-          
+
 
             <!-- Process Section Start -->
             <div class="rs-process style1 bg2 pt-100 pb-100 md-pt-70 md-pb-70"
-            style="background-image: url('{{asset('assets/images/ser-bg.png')}}') !important;">                
+            style="background-image: url('{{asset('assets/images/ser-bg.png')}}') !important;">
                 <div class="container">
                     <div class="row y-middle">
                         <div class="col-lg-5">
@@ -396,7 +405,7 @@
                                         <div class="number-text">
                                             <div class="number-area"> <span class="number-prefix"> 1 </span></div>
                                             <div class="number-title"><h3 class="title"> Découverte</h3></div>
-                                            <div class="number-txt"> 
+                                            <div class="number-txt">
                                                 Quisque placerat vitae focus scelerisque. Fusce luctus odio ac nibh luctus, in porttitor.
                                             </div>
                                         </div>
@@ -412,7 +421,7 @@
                                         <div class="number-text">
                                             <div class="number-area"> <span class="number-prefix"> 2 </span></div>
                                             <div class="number-title"><h3 class="title">Planification</h3></div>
-                                            <div class="number-txt"> 
+                                            <div class="number-txt">
                                                 Quisque placerat vitae focus scelerisque. Fusce luctus odio ac nibh luctus, in porttitor.
                                             </div>
                                         </div>
@@ -428,7 +437,7 @@
                                         <div class="number-text">
                                             <div class="number-area"> <span class="number-prefix"> 3 </span></div>
                                             <div class="number-title"><h3 class="title">Exécuter</h3></div>
-                                            <div class="number-txt"> 
+                                            <div class="number-txt">
                                                 Quisque placerat vitae focus scelerisque. Fusce luctus odio ac nibh luctus, in porttitor.
                                             </div>
                                         </div>
@@ -444,7 +453,7 @@
                                         <div class="number-text">
                                             <div class="number-area"> <span class="number-prefix"> 4 </span></div>
                                             <div class="number-title"><h3 class="title">Livrer</h3></div>
-                                            <div class="number-txt"> 
+                                            <div class="number-txt">
                                                 Quisque placerat vitae focus scelerisque. Fusce luctus odio ac nibh luctus, in porttitor.
                                             </div>
                                         </div>
@@ -459,43 +468,45 @@
 <!-- Partner Section Start -->
 <div id="rs-blog" class="rs-about style1 pt-100 pb-100 md-pt-70 md-pb-70">
     <div class="container">
-        <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40">
-            <div class="first-half">
-                <div class="sub-text">Nos partenzires</div>
+        <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40 row justify-content-center">
+            <div class="text-center col-lg-4">
                 <h2 class="title mb-0 md-pb-20">
-                    Les meilleures solutions pour votre entreprise - <span> ce que nous faisons.</span></h2>
-            </div>          
+                    Nos  <span> partenaires</span></h2>
+                    <p class="desc">
+                        Ce qui ont accepté de  nous faire confiance
+                    </p>
+            </div>
         </div>
-        <div class="rs-patter-section style1 pt-75">
+        <div class="rs-patter-section style1">
             <div class="container custom">
-                <div class="rs-carousel owl-carousel" 
-                    data-loop="true" 
-                    data-items="5" 
-                    data-margin="30" 
-                    data-autoplay="true" 
-                    data-hoverpause="true" 
-                    data-autoplay-timeout="5000" 
-                    data-smart-speed="800" 
-                    data-dots="false" 
-                    data-nav="false" 
-                    data-nav-speed="false" 
-        
-                    data-md-device="5" 
-                    data-md-device-nav="false" 
-                    data-md-device-dots="false" 
+                <div class="rs-carousel owl-carousel"
+                    data-loop="true"
+                    data-items="5"
+                    data-margin="30"
+                    data-autoplay="true"
+                    data-hoverpause="true"
+                    data-autoplay-timeout="5000"
+                    data-smart-speed="800"
+                    data-dots="false"
+                    data-nav="false"
+                    data-nav-speed="false"
+
+                    data-md-device="5"
+                    data-md-device-nav="false"
+                    data-md-device-dots="false"
                     data-center-mode="false"
-        
-                    data-ipad-device2="4" 
-                    data-ipad-device-nav2="false" 
+
+                    data-ipad-device2="4"
+                    data-ipad-device-nav2="false"
                     data-ipad-device-dots2="true"
-        
-                    data-ipad-device="3" 
-                    data-ipad-device-nav="false" 
-                    data-ipad-device-dots="false" 
-        
-                    data-mobile-device="2" 
-                    data-mobile-device-nav="false" 
-                    data-mobile-device-dots="false">  
+
+                    data-ipad-device="3"
+                    data-ipad-device-nav="false"
+                    data-ipad-device-dots="false"
+
+                    data-mobile-device="2"
+                    data-mobile-device-nav="false"
+                    data-mobile-device-dots="false">
                     <div class="logo-img">
                         <a href="https://rstheme.com">
                             <img class="hovers-logos rs-grid-img" src="assets/images/partner/1.png" title="" alt="">
@@ -545,7 +556,7 @@
 </div>
 <!-- Partner Section End -->
             <!-- Testimonial Section Start -->
-            <div  class="rs-testimonial style2 bg10 pt-100 pb-100 md-pt-70 md-pb-70" 
+            <div  class="rs-testimonial style2 bg10 pt-100 pb-100 md-pt-70 md-pb-70"
             style="background-image: url('{{asset('assets/images/testimonial/testi-bg2.jpg')}}') !important;">
                 <div class="container">
                     <div class="sec-title2 text-center md-left mb-30">
@@ -726,35 +737,35 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
                                                 <input class="from-control" type="text" id="name" name="name" placeholder="Nom" required="">
-                                            </div> 
+                                            </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
                                                 <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
-                                            </div>   
+                                            </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
                                                 <input class="from-control" type="text" id="phone" name="phone" placeholder="Numéro de téléphone" required="">
-                                            </div>   
+                                            </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
                                                 <input class="from-control" type="text" id="Website" name="subject" placeholder="Votre site web" required="">
                                             </div>
-                                      
+
                                             <div class="col-lg-12 mb-30">
                                                 <textarea class="from-control" id="message" name="message" placeholder="Votre message" required=""></textarea>
                                             </div>
                                         </div>
-                                        <div class="btn-part">                                            
+                                        <div class="btn-part">
                                             <div class="form-group mb-0">
                                                 <input class="readon submit" type="submit" value="Envoyer">
                                             </div>
-                                        </div> 
+                                        </div>
                                     </fieldset>
-                                </form> 
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Contact Section End -->
-            
-        </div> 
+
+        </div>
         <!-- Main content End -->
 @endsection
