@@ -74,7 +74,7 @@
                                         <li class="current-menu-item"><a href="#rs-header">Accueil</a></li>
                                         <li><a href="#rs-about">A propo</a> </li>
                                         <li><a href="#rs-services">Nos services</a> </li>
-                                        <li><a href="#rs-blog">Temoignages</a> </li>
+                                        <li><a href="#rs-blog">Partenaires</a> </li>
                                         <li><a href="#rs-contact">Contact</a> </li>
                                     </ul> <!-- //.nav-menu -->
                                 </nav>
@@ -185,8 +185,7 @@
                 <li class="current-menu-item"><a href="#rs-header">Accueil</a></li>
                 <li><a href="#rs-about">A propo</a> </li>
                 <li><a href="#rs-services">Nos services</a> </li>
-                <li><a href="#rs-project">Nos réalisations</a> </li>
-                <li><a href="#rs-blog">Blog</a> </li>
+                <li><a href="#rs-blog">Partenaires</a> </li>
                 <li><a href="#rs-contact">Contact</a> </li>
             </ul> <!-- //.nav-menu -->
             <div class="canvas-contact">

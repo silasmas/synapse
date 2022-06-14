@@ -205,83 +205,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Partner Section Start -->
-                <div class="rs-patter-section style1 pt-75">
-                    <div class="container custom">
-                        <div class="rs-carousel owl-carousel" 
-                            data-loop="true" 
-                            data-items="5" 
-                            data-margin="30" 
-                            data-autoplay="true" 
-                            data-hoverpause="true" 
-                            data-autoplay-timeout="5000" 
-                            data-smart-speed="800" 
-                            data-dots="false" 
-                            data-nav="false" 
-                            data-nav-speed="false" 
-
-                            data-md-device="5" 
-                            data-md-device-nav="false" 
-                            data-md-device-dots="false" 
-                            data-center-mode="false"
-
-                            data-ipad-device2="4" 
-                            data-ipad-device-nav2="false" 
-                            data-ipad-device-dots2="true"
-
-                            data-ipad-device="3" 
-                            data-ipad-device-nav="false" 
-                            data-ipad-device-dots="false" 
-
-                            data-mobile-device="2" 
-                            data-mobile-device-nav="false" 
-                            data-mobile-device-dots="false">  
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/1.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/1.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/2.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/2.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/3.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/3.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/4.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/4.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/5.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/5.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/6.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/6.png" title="" alt="">
-                                </a>
-                            </div>
-                            <div class="logo-img">
-                                <a href="https://rstheme.com">
-                                    <img class="hovers-logos rs-grid-img" src="assets/images/partner/7.png" title="" alt="">
-                                    <img class="mains-logos rs-grid-img " src="assets/images/partner/7.png" title="" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Partner Section End -->
+                
             </div>
             <!-- About Section Start -->
 
@@ -532,9 +456,96 @@
                 </div>
             </div>
             <!-- Process Section End -->
-
+<!-- Partner Section Start -->
+<div id="rs-blog" class="rs-about style1 pt-100 pb-100 md-pt-70 md-pb-70">
+    <div class="container">
+        <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40">
+            <div class="first-half">
+                <div class="sub-text">Nos partenzires</div>
+                <h2 class="title mb-0 md-pb-20">
+                    Les meilleures solutions pour votre entreprise - <span> ce que nous faisons.</span></h2>
+            </div>          
+        </div>
+        <div class="rs-patter-section style1 pt-75">
+            <div class="container custom">
+                <div class="rs-carousel owl-carousel" 
+                    data-loop="true" 
+                    data-items="5" 
+                    data-margin="30" 
+                    data-autoplay="true" 
+                    data-hoverpause="true" 
+                    data-autoplay-timeout="5000" 
+                    data-smart-speed="800" 
+                    data-dots="false" 
+                    data-nav="false" 
+                    data-nav-speed="false" 
+        
+                    data-md-device="5" 
+                    data-md-device-nav="false" 
+                    data-md-device-dots="false" 
+                    data-center-mode="false"
+        
+                    data-ipad-device2="4" 
+                    data-ipad-device-nav2="false" 
+                    data-ipad-device-dots2="true"
+        
+                    data-ipad-device="3" 
+                    data-ipad-device-nav="false" 
+                    data-ipad-device-dots="false" 
+        
+                    data-mobile-device="2" 
+                    data-mobile-device-nav="false" 
+                    data-mobile-device-dots="false">  
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/1.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/1.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/2.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/2.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/3.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/3.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/4.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/4.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/5.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/5.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/6.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/6.png" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="logo-img">
+                        <a href="https://rstheme.com">
+                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/7.png" title="" alt="">
+                            <img class="mains-logos rs-grid-img " src="assets/images/partner/7.png" title="" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Partner Section End -->
             <!-- Testimonial Section Start -->
-            <div id="rs-blog" class="rs-testimonial style2 bg10 pt-100 pb-100 md-pt-70 md-pb-70" 
+            <div  class="rs-testimonial style2 bg10 pt-100 pb-100 md-pt-70 md-pb-70" 
             style="background-image: url('{{asset('assets/images/testimonial/testi-bg2.jpg')}}') !important;">
                 <div class="container">
                     <div class="sec-title2 text-center md-left mb-30">
