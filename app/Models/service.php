@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\service;
+use App\Models\bande;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class bande extends Model
+class service extends Model
 {
     use HasFactory;
     protected $guarded=[];
 
-    public function service(){
-        return $this->hasMany(service::class);
+    public function branche(){
+        return $this->belongsTo(bande::class);
     }
 }

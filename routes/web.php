@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BandeController;
+use App\Http\Controllers\PartenaireController;
+use App\Http\Controllers\TemoignageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +25,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group( function (){
+    Route::get('inserbranche', [BandeController::class,'create'])->name('inserbranche');
+    Route::get('inserservice', [serviceController::class,'create'])->name('inserbande');
+    Route::get('insertemoignage', [TemoignageController::class,'create'])->name('insertemoignage');
+    Route::get('inserpartenaire', [PartenaireController::class,'create'])->name('inserpartenaire');
+    
+    Route::post('storeBranche', [BandeController::class,'store'])->name('storeBranche');
+    Route::get('storeService', [serviceController::class,'store'])->name('storeService');
+    Route::get('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
+    Route::get('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
 
 });
 require __DIR__.'/auth.php';

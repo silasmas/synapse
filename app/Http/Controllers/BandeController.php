@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\bande;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorebandeRequest;
 use App\Http\Requests\UpdatebandeRequest;
+use Illuminate\Support\Facades\Validator;
 
 class BandeController extends Controller
 {
@@ -25,7 +27,8 @@ class BandeController extends Controller
      */
     public function create()
     {
-        //
+        $branches=bande::get();
+        return view("admin.pages.addBande",compact('branches'));
     }
 
     /**
@@ -34,9 +37,30 @@ class BandeController extends Controller
      * @param  \App\Http\Requests\StorebandeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorebandeRequest $request)
+    public function store(Request $request)
     {
-        //
+        $por = Validator::make($request->all(),[
+            'image' => 'required|sometimes|image',
+        ]);
+        if($por->passes()){
+        $file = $request->file('image');
+// dd($file);
+        $filenameImg ='branches/' . time() . '.' . $file->getClientOriginalName();
+        $file == '' ? '' : $file->move('storage/branches', $filenameImg);
+
+        if ($request->image) {
+          bande::create([
+          'titre' => $request->titre,
+          'description' =>$request->description,
+          'image' => $filenameImg,
+          ]);
+          return back()->with(['message'=>'Enregistrement réussit',"type"=>"success"]);
+      } else {
+          return back()->with(['message'=>'Merci de vérifier le formulaire!',"type"=>"danger"]);
+      }
+    }else{
+        return back()->with(['message'=>$por->errors()->first(),'type'=>"danger"]);
+    }
     }
 
     /**

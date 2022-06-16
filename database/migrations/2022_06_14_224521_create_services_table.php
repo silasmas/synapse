@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bandes', function (Blueprint $table) {
-            $table->id();
-            $table->string('titre')->nullable();
+        Schema::create('services', function (Blueprint $table) {
+            $table->id(); 
+            $table->foreignId('bande_id')->constrained()->onUpdate('cascade')
+            ->onDelete('cascade');            
+            $table->string('serviceTitre')->nullable();
+            $table->string('sousTitre')->nullable();
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bandes');
+        Schema::dropIfExists('services');
     }
 };

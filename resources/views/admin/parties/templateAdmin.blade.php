@@ -36,7 +36,7 @@
                             <li class="nav-header">
                                 <div class="dropdown profile-element">
                                     <span>
-                                        <img alt="image" class="img-circle" src="{{asset('img/default.png')}}" width="100" />
+                                        <img alt="image" class="img-circle" src="{{asset('admin/img/default.png')}}" width="100" />
                                         </span>
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                         <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->prenom.'-'.Auth::user()->name }}</strong>
@@ -66,46 +66,34 @@
                                 <span class="pull-right label label-primary">Gestion</span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li class="{{ $titre=="G_Home"?"active":"" }}">
-                                        <a href="{{ route('dashboard')}}">
-                                             <span class="nav-label">Teams</span></a>
+                                        <a href="">
+                                             <span class="nav-label">Branches & Services</span></a>
                                         </li>
-                                        <li  class="{{ $titre=="G_Publication"?"active":"" }}"> <a href="{{ route('g_publication')}}">
-                                             <span class="nav-label">Publications</span></a>
+                                        <li  class="{{ $titre=="G_Publication"?"active":"" }}"> <a href="">
+                                             <span class="nav-label">Témoignages</span></a>
                                         </li>
-                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="{{ route('gSlide') }}">Slides</a></li>
-                                    <li class="{{ $titre=="G_accueil"?"active":"" }}"><a href="{{ route('gHome') }}">Accueil</a></li>
-                                    <li class="{{ $titre=="G_about"?"active":"" }}"><a href="{{ route('gAbout') }}">About</a></li>
-                                    <li class="{{ $titre=="G_Bureau"?"active":"" }}"><a href="{{ route('gBureau') }}">Bureaux</a></li>
-                                    <li class="{{ $titre=="G_expertise"?"active":"" }}"><a href="{{ route('gexpertise') }}">Expertises</a></li>
+                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="">Partenaire</a></li>
+                                </ul>
+                            </li>
+                            <li class="{{ strpos($titre,'G_')===0 ?"active":"" }}">
+                                <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Pages </span>
+                                <span class="pull-right label label-warning">Insertion</span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li class="{{ $titre=="Ajout branche"?"active":"" }}">
+                                        <a href="{{ route('inserbranche')}}">
+                                             <span class="nav-label">Branche & Service</span></a>
+                                        </li>
+                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="">Partenaire</a></li>
+                                    <li class="{{ $titre=="G_accueil"?"active":"" }}"><a href="">Témoignage</a></li>
                                 </ul>
                             </li>
 
-                            <li  class="{{ $titre=="news_letter"?"active":"" }}"> <a href="{{ route('news_letter')}}"><i class="fa fa-envelope-open"></i>
+                            <li  class="{{ $titre=="news_letter"?"active":"" }}"> <a href=""><i class="fa fa-envelope-open"></i>
                                  <span class="nav-label">News letter</span></a>
                             </li>
-
-                            <li  class="{{ strpos($titre,'P_')===0 ?"active":"" }}">
-                                <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">Pages</span>
-                                <span class="pull-right label label-primary">Publication</span></a>
-                                <ul class="nav nav-second-level collapse">
-                                    <li class="{{ $titre=="P_addPublication"?"active":"" }}">
-                                        <a href="{{ route('addPub') }}">
-                                            <span class="nav-label">Publications</span></a>
-                                        </li>
-                                         <li class="{{ $titre=="P_addAvocat"?"active":"" }}">
-                                        <a href="{{ route('addAvocat') }}">
-                                            <span class="nav-label">Equipe</span></a>
-                                        </li>
-                                    <li class="{{ $titre=="P_AddSlide"?"active":"" }}"><a href="{{ route('addSlide') }}">Slides</a></li>
-                                    <li class="{{ $titre=="P_AddHome"?"active":"" }}"><a href="{{ route('addHome') }}">Accueil</a></li>
-                                    <li class='{{ $titre=="P_addAbout"?"active":"" }}'><a href="{{ route('addAbout') }}">About</a></li>
-                                    <li class='{{ $titre=="P_AddExpertise"?"active":"" }}'><a href="{{ route('addExpertise') }}">Expertises</a></li>
-                                    <li class='{{ $titre=="P_addBureau"?"active":"" }}'><a href="{{ route('addBureau') }}">Bureaux</a></li>
-                                </ul>
-                            </li>
-                             <li class="{{ $titre=="user"?"active":"" }}">
-                            <a href=""><i class="fa fa-users"></i>
-                                 <span class="nav-label">Gestion user</span></a>
+                            <li  class="{{ $titre=="news_letter"?"active":"" }}"> <a href="">
+                                <i class="fa fa-user"></i>
+                                 <span class="nav-label">Utilisateurs</span></a>
                             </li>
                         </ul>
 
@@ -125,7 +113,7 @@
                                 </div>
                                 <ul class="nav navbar-top-links navbar-right">
                                     <li>
-                                        <span class="m-r-sm text-muted welcome-message">Bienvenue dans l'espace Admin PLA.</span>
+                                        <span class="m-r-sm text-muted welcome-message">Bienvenue dans l'espace Admin du Groupe synapse.</span>
                                     </li>
 
                                     <li>
@@ -156,7 +144,7 @@
 
                             </div>
                             <div>
-                                <a href='silasdev.com'> <strong>Copyright</strong> SDev &copy; 2020-2021 </a>
+                                <a href='silasdev.com'> <strong>Copyright</strong> SDev &copy; 2022 </a>
                             </div>
                         </div>
                 </div>
