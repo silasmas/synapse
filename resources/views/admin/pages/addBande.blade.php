@@ -81,11 +81,6 @@
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
                                                         </div>
-                                                        @if ($errors->has('image'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('image') }}</strong>
-                                                            </span>
-                                                        @endif
                                                     </div>
                                                     <div class=" col-sm-12 form-group">
                                                         <label>Description </label>

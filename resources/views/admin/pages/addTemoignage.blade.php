@@ -1,5 +1,5 @@
 
-@extends('admin.parties.templateAdmin', ['titre' => 'Ajout branche'])
+@extends('admin.parties.templateAdmin', ['titre' => 'Ajout temoignage'])
 
 @section('autres_style')
     <link href="{{ asset('admin/css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
@@ -25,21 +25,16 @@
                 <div class="tabs-container">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#tab-fidel">
-                                Ajouter branche
+                                Ajouter témoignage
                                 <span class="label label-warning">Formulaire</span>
                             </a>
-                        </li>
-                        <li><a data-toggle="tab" href="#tab-fidelImport">
-                                Ajouter Service
-                                <span class="label label-warning">Formulaire</span>
-                            </a>
-                        </li>
+                        </li>                       
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab-fidel">
                             <div class="panel-body">
                                 <div class="ibox-title">
-                                    <h5>Ce formulaire vous permet d'enregistrer une branche</h5>
+                                    <h5>Ce formulaire vous permet d'enregistrer un témoignage</h5>
                                 </div>
                                 <div class="ibox-content">
                                     <div class="sk-spinner sk-spinner-wandering-cubes">
@@ -48,27 +43,36 @@
                                     </div>
                                     <div class='row'>
                                         <div class=" col-lg-12 col-sm-12">
-                                            <form method="POST" class="" action="{{ route('storeBranche') }}"
+                                            <form method="POST" class="" action="{{ route('storetemoignage') }}"
                                                 class='form-group' data-parsley-validate enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div>
                                                         <input name="id" hidden value="" />
                                                     </div>
-                                                    <div class="col-sm-12 form-group ">
-                                                        <label>Titre de la brache</label>
-                                                        <input type="text" placeholder="Titre de la brache"
-                                                            class="form-control" name='titre' required
+                                                    <div class="col-sm-6 form-group ">
+                                                        <label>Nom</label>
+                                                        <input type="text" placeholder="Nom"
+                                                            class="form-control" name='nom' required
                                                             aria-required="true" value="" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
-                                                        @if ($errors->has('titre'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('titre') }}</strong>
-                                                            </span>
-                                                        @endif
                                                     </div>
-                                                    <div class="col-sm-12 form-group">
-                                                        <label>Image</label>
+                                                    <div class="col-sm-6 form-group ">
+                                                        <label>Prenom</label>
+                                                        <input type="text" placeholder="Prenom"
+                                                            class="form-control" name='prenom' required
+                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            data-parsley-trigger="change">
+                                                    </div>
+                                                    <div class="col-sm-6 form-group ">
+                                                        <label>Metier</label>
+                                                        <input type="text" placeholder="Metier"
+                                                            class="form-control" name='metier' required
+                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            data-parsley-trigger="change">
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Photo</label>
                                                         <div class=" fileinput fileinput-new input-group"
                                                             data-provides="fileinput">
                                                             <div class="form-control" data-trigger="fileinput">
@@ -76,22 +80,18 @@
                                                                 <span class="fileinput-filename"></span>
                                                             </div>
                                                             <span class="input-group-addon btn btn-default btn-file"><span
-                                                                    class="fileinput-new">Image</span>
+                                                                    class="fileinput-new">Photo</span>
                                                                 <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="image" required
+                                                                    type="file" name="photo" required
                                                                     aria-required="true"></span>
                                                             <a href="#"
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
                                                         </div>
-                                                        @if ($errors->has('image'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('image') }}</strong>
-                                                            </span>
-                                                        @endif
+                                                        
                                                     </div>
                                                     <div class=" col-sm-12 form-group">
-                                                        <label>Description </label>
+                                                        <label>Témoignage </label>
                                                         <textarea name="description" class="summernote" rows="12" data-parsley-trigger="change" required
                                                             aria-required="true">
                                                 </textarea>
@@ -110,87 +110,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-fidelImport">
-                            <div class="panel-body">
-                                <div class="ibox-title">
-                                    <h5>Ce formulaire vous permet d'enregistrer le service d'une branche</h5>
-                                </div>
-                                <div class="ibox-content">
-                                    <div class="sk-spinner sk-spinner-wandering-cubes">
-                                        <div class="sk-cube1"></div>
-                                        <div class="sk-cube2"></div>
-                                    </div>
-                                    <div class='row'>
-                                        <div class=" col-lg-12 col-sm-12">
-                                            <form id="formFidel" method="POST" class="" action="{{ route('storeService') }}"
-                                                class='form-group' data-parsley-validate enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="row">
-                                                    <div>
-                                                        <input name="id" hidden value="" />
-                                                    </div>                                                  
-                                                    <div class="col-sm-6 form-group ">
-                                                        <label>Branches</label>
-                                                        <select class=" form-control" id="" required aria-required="true"
-                                                            class="validate" data-parsley-trigger="change"
-                                                            name="bande_id">
-                                                            <option value="" disabled selected>Selectionnez une branches
-                                                            </option>
-                                                           @forelse ($branches as $b)
-                                                           <option value="{{ $b->id }}">{{ $b->titre }}</option>
-                                                           @empty
-                                                               
-                                                           @endforelse
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-6 form-group ">
-                                                        <label>Titre du service</label>
-                                                        <input type="text" placeholder="Titre du service"
-                                                            class="form-control" name='serviceTitre' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
-                                                            data-parsley-trigger="change">
-                                                    </div>
-                                                    <div class="col-sm-12 form-group">
-                                                        <label>Image</label>
-                                                        <div class=" fileinput fileinput-new input-group"
-                                                            data-provides="fileinput">
-                                                            <div class="form-control" data-trigger="fileinput">
-                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
-                                                                <span class="fileinput-filename"></span>
-                                                            </div>
-                                                            <span class="input-group-addon btn btn-default btn-file"><span
-                                                                    class="fileinput-new">Image</span>
-                                                                <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="cover" required
-                                                                    aria-required="true"></span>
-                                                            <a href="#"
-                                                                class="input-group-addon btn btn-default fileinput-exists"
-                                                                data-dismiss="fileinput">Supprimer</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class=" col-sm-12 form-group">
-                                                        <label>Description </label>
-                                                        <textarea name="description" class="summernote" rows="12" data-parsley-trigger="change" required
-                                                            aria-required="true">
-                                                </textarea>
-                                                    </div>
-                                                    <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
-
-                                                        <div class="col-sm-offset-4 col-sm-5">
-
-                                                            <button class="ladda-button btn btn-sm btn-primary"
-                                                                id='ladda-session' data-style="expand-right"
-                                                                type="submit">Enregistrer</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        
                     </div>
                 </div>
             </div>

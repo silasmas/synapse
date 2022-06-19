@@ -1,9 +1,9 @@
-@extends('admin.parties.templateAdmin', ['titre' => 'Ajout partenaireadmin/'])
+@extends('admin.parties.templateAdmin', ['titre' => 'Ajout partenaire'])
 
 
 @section('autres_style')
-    <link href="{{ asset('css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/plugins/chosen/bootstrap-chosen.css') }}">
+    <link href="{{ asset('admin/css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/chosen/bootstrap-chosen.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/js/parsley/parsley.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/chosen/bootstrap-chosen.css') }}">
@@ -30,8 +30,7 @@
                             <div class="col-lg-12">
                                 <div class="tabs-container">
                                     <div class="ibox-title">
-                                        <h5>Ce formulaire vous permet d'enregistrer les différentes fonction que peux avoir
-                                            un membre de l'équipe</h5>
+                                        <h5>Ce formulaire vous permet d'enregistrer un partenaire</h5>
                                     </div>
                                     <div class="col-lg-offset-1 col-lg-10 col-sm-12">
                                         <div class="ibox" id="tabCat">
@@ -43,26 +42,35 @@
                                                 <div class='row'>
                                                     <div class=" col-lg-12 col-sm-12">
                                                         <form id="" method="POST" action="{{ route('storepartenaire') }}"
-                                                            class="" data-parsley-validate>
+                                                            class="" data-parsley-validate enctype="multipart/form-data">
                                                             @csrf
                                                             <div class="row">
-                                                                <div class="col-lg-6 form-group ">
-                                                                    <label>Nom de la fonction
-                                                                        (français)</label>
+                                                                <div class="col-lg-12 form-group ">
+                                                                    <label>Nom du partenaire</label>
                                                                     <input type="text" class="form-control"
-                                                                        name='fonction' required
+                                                                        name='titre' required
                                                                         value="{{ isset($fonctions) ? $fonctions->fonction : '' }}"
                                                                         aria-required="true" data-parsley-minlength="2"
                                                                         data-parsley-trigger="change">
                                                                 </div>
-                                                                <div class="col-lg-6 form-group ">
-                                                                    <label>Nom de la fonction
-                                                                        (Anglais)</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name='fonction_en' required
-                                                                        value="{{ isset($fonctions) ? $fonctions->getTranslation('fonction', 'en') : '' }}"
-                                                                        aria-required="true" data-parsley-minlength="2"
-                                                                        data-parsley-trigger="change">
+                                                               
+                                                                <div class="col-sm-12 form-group">
+                                                                    <label>Logo</label>
+                                                                    <div class=" fileinput fileinput-new input-group"
+                                                                        data-provides="fileinput">
+                                                                        <div class="form-control" data-trigger="fileinput">
+                                                                            <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                            <span class="fileinput-filename"></span>
+                                                                        </div>
+                                                                        <span class="input-group-addon btn btn-default btn-file"><span
+                                                                                class="fileinput-new">Logo</span>
+                                                                            <span class="fileinput-exists">Changer</span><input
+                                                                                type="file" name="logo" required
+                                                                                aria-required="true"></span>
+                                                                        <a href="#"
+                                                                            class="input-group-addon btn btn-default fileinput-exists"
+                                                                            data-dismiss="fileinput">Supprimer</a>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
                                                                     <div class="col-sm-offset-4 col-sm-5">
@@ -98,109 +106,14 @@
 
     <script src="{{ asset('admin/js/parsley/js/parsley.js') }}"></script>
     <script src="{{ asset('admin/js/parsley/i18n/fr.js') }}"></script>
-
-    <script src="{{ asset('admin/js/toastr/toastr.min.js') }}"></script>
-    <script src="{{ asset('admin/js/chosen/chosen.jquery.js') }}"></script>
-    <script src="{{ asset('admin/js/dualListbox/jquery.bootstrap-duallistbox.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('.summernote').summernote();
-            $('.chosen-select').chosen({
-                width: "100%"
-            });
-            $('.dual_select').bootstrapDualListbox({
-                selectorMinimalHeight: 160
-            });
-            // $(".select2_demo_4").select2({
-            //         placeholder: "Choisissez un mentor",
-            //         allowClear: true
-            //     });
-            $('#bureau').change(function() {
-                $('#inpute').val($(this).val());
-            });
-            $("#formFonction").on("submit", function(e) {
-                e.preventDefault();
-                add("#formFonction", '#tabCat', 'add.fonction')
-            });
-            $("#Updat").on("submit", function(e) {
-                e.preventDefault();
-                update("#Updat", '#tabCatr', 'modifierFonctions')
-            });
-            $("#formBureau").on("submit", function(e) {
-                e.preventDefault();
-                //  alert($('#bureau').val());
-                if ($('#bureau').val() != '') {
-                    add("#formBureau", '#tabbureau', 'add.affectation')
-                } else {
-                    swal({
-                        title: 'Veillez selectionnez au-moins un bureau',
-                        icon: 'error'
-                    })
-                }
-            });
+            $('.summernote').summernote();            
 
         });
 
         function load(id) {
             $(id).children('.ibox-content').toggleClass('sk-loading');
-        }
-
-        function update(form, idLoad, url) {
-            var f = form;
-            var loade = idLoad;
-            var u = url;
-            load(loade);
-            $.ajax({
-                url: u,
-                method: "post",
-                data: $(f).serialize(),
-                success: function(data) {
-                    load(loade);
-                    if (!data.reponse) {
-                        swal({
-                            title: data.msg,
-                            icon: 'error'
-                        })
-                    } else {
-                        swal({
-                            title: data.msg,
-                            icon: 'success'
-                        })
-
-                        $(f)[0].reset();
-                    }
-
-                },
-            });
-        }
-
-        function add(form, idLoad, url) {
-            var f = form;
-            var loade = idLoad;
-            var u = url;
-            load(loade);
-            $.ajax({
-                url: u,
-                method: "post",
-                data: $(f).serialize(),
-                success: function(data) {
-                    load(loade);
-                    if (!data.reponse) {
-                        swal({
-                            title: data.msg,
-                            icon: 'error'
-                        })
-                    } else {
-                        swal({
-                            title: data.msg,
-                            icon: 'success'
-                        })
-
-                        $(f)[0].reset();
-                    }
-
-                },
-            });
         }
     </script>
 @endsection

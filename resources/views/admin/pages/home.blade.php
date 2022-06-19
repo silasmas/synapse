@@ -1,4 +1,4 @@
-@extends('admin.parties.templateAdmin',['titre'=>"Accueil"])
+@extends('admin.parties.templateAdmin',['titre'=>"Gestion Banche"])
 
 
 @section('content')

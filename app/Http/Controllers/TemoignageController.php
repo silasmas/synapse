@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\temoignage;
-use App\Http\Requests\StoretemoignageRequest;
 use App\Http\Requests\UpdatetemoignageRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TemoignageController extends Controller
 {
@@ -15,7 +16,8 @@ class TemoignageController extends Controller
      */
     public function index()
     {
-        //
+        $temoignage = temoignage::get();
+        return view("admin.pages.temoignage", compact('temoignage'));
     }
 
     /**
@@ -34,9 +36,32 @@ class TemoignageController extends Controller
      * @param  \App\Http\Requests\StoretemoignageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoretemoignageRequest $request)
+    public function store(Request $request)
     {
-        //
+        $por = Validator::make($request->all(), [
+            'photo' => 'required|sometimes|image',
+        ]);
+        if ($por->passes()) {
+            $file = $request->file('photo');
+            // dd($file->getClientOriginalName());
+            $filenameImg = 'temoignage/' . time() . '.' . $file->getClientOriginalName();
+            $file == '' ? '' : $file->move('storage/temoignage', $filenameImg);
+
+            if ($request->photo) {
+                temoignage::create([
+                    'nom' => $request->nom,
+                    'prenom' => $request->prenom,
+                    'metier' => $request->metier,
+                    'description' => $request->description,
+                    'photo' => $filenameImg,
+                ]);
+                return back()->with(['message' => 'Enregistrement réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        } else {
+            return back()->with(['message' => $por->errors()->first(), 'type' => "danger"]);
+        }
     }
 
     /**

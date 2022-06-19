@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\partenaire;
-use App\Http\Requests\StorepartenaireRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\UpdatepartenaireRequest;
 
 class PartenaireController extends Controller
@@ -15,7 +16,8 @@ class PartenaireController extends Controller
      */
     public function index()
     {
-        //
+        $partenaire = partenaire::get();
+        return view("admin.pages.partenaire", compact('partenaire'));
     }
 
     /**
@@ -34,9 +36,29 @@ class PartenaireController extends Controller
      * @param  \App\Http\Requests\StorepartenaireRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorepartenaireRequest $request)
+    public function store(Request $request)
     {
-        //
+        $por = Validator::make($request->all(), [
+            'logo' => 'required|sometimes|image',
+        ]);
+        if ($por->passes()) {
+            $file = $request->file('logo');
+            // dd($file);
+            $filenameImg = 'partenaires/' . time() . '.' . $file->getClientOriginalName();
+            $file == '' ? '' : $file->move('storage/partenaires', $filenameImg);
+
+            if ($request->logo) {
+                partenaire::create([
+                    'titre' => $request->titre,
+                    'logo' => $filenameImg,
+                ]);
+                return back()->with(['message' => 'Enregistrement réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        } else {
+            return back()->with(['message' => $por->errors()->first(), 'type' => "danger"]);
+        }
     }
 
     /**
@@ -47,7 +69,6 @@ class PartenaireController extends Controller
      */
     public function show(partenaire $partenaire)
     {
-        //
     }
 
     /**

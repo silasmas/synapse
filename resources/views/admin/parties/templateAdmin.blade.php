@@ -61,21 +61,23 @@
                                    G.Synapse
                                 </div>
                             </li>
-                            <li class="{{ strpos($titre,'G_')===0 ?"active":"" }}">
+                            <li class="{{ strpos($titre,'Gestion')===0 ?"active":"" }}">
                                 <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Pages </span>
                                 <span class="pull-right label label-primary">Gestion</span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li class="{{ $titre=="G_Home"?"active":"" }}">
-                                        <a href="">
+                                    <li class="{{ $titre=="Gestion Banche"?"active":"" }}">
+                                        <a href="{{ route('G_branche') }}">
                                              <span class="nav-label">Branches & Services</span></a>
                                         </li>
-                                        <li  class="{{ $titre=="G_Publication"?"active":"" }}"> <a href="">
+                                        <li  class="{{ $titre=="Gestion Temoignage"?"active":"" }}"> 
+                                            <a href="{{ route('G_temoignage') }}">
                                              <span class="nav-label">Témoignages</span></a>
                                         </li>
-                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="">Partenaire</a></li>
+                                    <li class="{{ $titre=="Gestion Partenaire"?"active":"" }}">
+                                        <a href="{{ route('G_partenaire') }}">Partenaire</a></li>
                                 </ul>
                             </li>
-                            <li class="{{ strpos($titre,'G_')===0 ?"active":"" }}">
+                            <li class="{{ strpos($titre,'Ajout')===0 ?"active":"" }}">
                                 <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Pages </span>
                                 <span class="pull-right label label-warning">Insertion</span></a>
                                 <ul class="nav nav-second-level collapse">
@@ -83,8 +85,8 @@
                                         <a href="{{ route('inserbranche')}}">
                                              <span class="nav-label">Branche & Service</span></a>
                                         </li>
-                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="{{ route('inserpartenaire')}}">Partenaire</a></li>
-                                    <li class="{{ $titre=="G_accueil"?"active":"" }}"><a href="{{ route('insertemoignage')}}">Témoignage</a></li>
+                                    <li class="{{ $titre=="Ajout partenaire"?"active":"" }}"><a href="{{ route('inserpartenaire')}}">Partenaire</a></li>
+                                    <li class="{{ $titre=="Ajout temoignage"?"active":"" }}"><a href="{{ route('insertemoignage')}}">Témoignage</a></li>
                                 </ul>
                             </li>
 

@@ -17,7 +17,8 @@ class BandeController extends Controller
      */
     public function index()
     {
-        //
+        $branches = bande::get();
+        return view("admin.pages.home", compact('branches'));
     }
 
     /**
@@ -27,8 +28,8 @@ class BandeController extends Controller
      */
     public function create()
     {
-        $branches=bande::get();
-        return view("admin.pages.addBande",compact('branches'));
+        $branches = bande::get();
+        return view("admin.pages.addBande", compact('branches'));
     }
 
     /**
@@ -39,28 +40,28 @@ class BandeController extends Controller
      */
     public function store(Request $request)
     {
-        $por = Validator::make($request->all(),[
+        $por = Validator::make($request->all(), [
             'image' => 'required|sometimes|image',
         ]);
-        if($por->passes()){
-        $file = $request->file('image');
-// dd($file);
-        $filenameImg ='branches/' . time() . '.' . $file->getClientOriginalName();
-        $file == '' ? '' : $file->move('storage/branches', $filenameImg);
+        if ($por->passes()) {
+            $file = $request->file('image');
+            // dd($file);
+            $filenameImg = 'branches/' . time() . '.' . $file->getClientOriginalName();
+            $file == '' ? '' : $file->move('storage/branches', $filenameImg);
 
-        if ($request->image) {
-          bande::create([
-          'titre' => $request->titre,
-          'description' =>$request->description,
-          'image' => $filenameImg,
-          ]);
-          return back()->with(['message'=>'Enregistrement réussit',"type"=>"success"]);
-      } else {
-          return back()->with(['message'=>'Merci de vérifier le formulaire!',"type"=>"danger"]);
-      }
-    }else{
-        return back()->with(['message'=>$por->errors()->first(),'type'=>"danger"]);
-    }
+            if ($request->image) {
+                bande::create([
+                    'titre' => $request->titre,
+                    'description' => $request->description,
+                    'image' => $filenameImg,
+                ]);
+                return back()->with(['message' => 'Enregistrement réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        } else {
+            return back()->with(['message' => $por->errors()->first(), 'type' => "danger"]);
+        }
     }
 
     /**
