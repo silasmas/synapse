@@ -12,7 +12,7 @@
    
                     <div class="clients-list">
                     <ul class="nav nav-tabs">
-                        <span class="pull-right small text-muted">1406 Elements</span>
+                        <span class="pull-right small text-muted">{{ $temoignage->count() }} Elements</span>
                         <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-user"></i> Témoignages</a></li>
                     </ul>
                     <div class="tab-content">
