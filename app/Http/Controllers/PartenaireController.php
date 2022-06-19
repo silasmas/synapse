@@ -25,7 +25,7 @@ class PartenaireController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.pages.addPartenaire");
     }
 
     /**

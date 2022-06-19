@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandeController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\TemoignageController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,9 @@ Route::middleware(['auth'])->group( function (){
     Route::get('inserpartenaire', [PartenaireController::class,'create'])->name('inserpartenaire');
     
     Route::post('storeBranche', [BandeController::class,'store'])->name('storeBranche');
-    Route::get('storeService', [serviceController::class,'store'])->name('storeService');
-    Route::get('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
-    Route::get('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
+    Route::post('storeService', [ServiceController::class,'store'])->name('storeService');
+    Route::post('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
+    Route::post('storepartenaire', [PartenaireController::class,'store'])->name('storepartenaire');
 
 });
 require __DIR__.'/auth.php';

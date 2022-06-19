@@ -1,13 +1,11 @@
-@extends('admin.parties.templateAdmin', ['titre' => 'Ajout branche'])
+@extends('admin.parties.templateAdmin', ['titre' => 'Ajout branche & service'])
 
 @section('autres_style')
     <link href="{{ asset('admin/css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/js/parsley/parsley.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/iCheck/custom.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-markdown/bootstrap-markdown.min.css') }}">
-    <link href="{{ asset('admin/css/dropzone/basic.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/dropzone/dropzone.css') }}" rel="stylesheet">
+   
 @endsection
 @section('content')
     <div class="wrapper wrapper-content animated fadeIn">
@@ -23,19 +21,19 @@
             <div class="col-lg-12">
                 <div class="tabs-container">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#tab-fidel">
+                        <li class="active"><a data-toggle="tab" href="#tab-branch">
                                 Ajouter branche
                                 <span class="label label-warning">Formulaire</span>
                             </a>
                         </li>
-                        <li><a data-toggle="tab" href="#tab-fidelImport">
+                        <li><a data-toggle="tab" href="#tab-service">
                                 Ajouter Service
                                 <span class="label label-warning">Formulaire</span>
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="tab-fidel">
+                        <div class="tab-pane active" id="tab-branch">
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <h5>Ce formulaire vous permet d'enregistrer une branche</h5>
@@ -109,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-fidelImport">
+                        <div class="tab-pane" id="tab-service">
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <h5>Ce formulaire vous permet d'enregistrer le service d'une branche</h5>
@@ -141,11 +139,6 @@
                                                                
                                                            @endforelse
                                                         </select>
-                                                        @if ($errors->has('bande_id'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('bande_id') }}</strong>
-                                                            </span>
-                                                        @endif
                                                     </div>
                                                     <div class="col-sm-6 form-group ">
                                                         <label>Titre du service</label>
@@ -153,11 +146,6 @@
                                                             class="form-control" name='serviceTitre' required
                                                             aria-required="true" value="" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
-                                                        @if ($errors->has('serviceTitre'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('serviceTitre') }}</strong>
-                                                            </span>
-                                                        @endif
                                                     </div>
                                                     <div class="col-sm-12 form-group">
                                                         <label>Image</label>
@@ -222,9 +210,11 @@
         <script>
             $(document).ready(function() {
                 $('.summernote').summernote();
-                $("#formFidel").on("submit", function(e) {
-                    e.preventDefault();
-                    add("#formFidel", '#tab-fidel', 'addFidel')
+                $("#formFidel").on("submit", function(e) {   
+                    // e.preventDefault();  
+                    // alert('ok')     
+                    // $('#tab-service').children('.ibox-content').toggleClass('sk-loading');       
+                    // load('#tab-service');
                 });
             });
 
@@ -232,35 +222,5 @@
                 $(id).children('.ibox-content').toggleClass('sk-loading');
             }
 
-            function add(form, idLoad, url) {
-                var f = form;
-                var loade = idLoad;
-                var u = url;
-                load(loade);
-                $.ajax({
-                    url: u,
-                    method: "POST",
-                    data: $(f).serialize(),
-                    success: function(data) {
-                        load(loade);
-                        if (!data.reponse) {
-                            swal({
-                                title: data.msg.phone ? 'Le numéro ' + data.msg.phone : '' + '' + data.msg
-                                    .email ? data.msg.email : "",
-                                icon: 'error'
-                            })
-                        } else {
-                            swal({
-                                title: data.msg,
-                                icon: 'success'
-                            })
-
-                            $(f)[0].reset();
-                        }
-
-                    },
-                });
-
-            }
         </script>
     @endsection

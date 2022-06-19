@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\service;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreserviceRequest;
 use App\Http\Requests\UpdateserviceRequest;
 
@@ -34,9 +36,31 @@ class ServiceController extends Controller
      * @param  \App\Http\Requests\StoreserviceRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreserviceRequest $request)
+    public function store(Request $request)
     {
-        //
+        $por = Validator::make($request->all(),[
+            'cover' => 'required|sometimes|image',
+        ]);
+        if($por->passes()){
+        $file = $request->file('cover');
+
+        $filenameImg ='services/' . time() . '.' . $file->getClientOriginalName();
+        $file == '' ? '' : $file->move('storage/services', $filenameImg);
+
+        if ($request->cover) {
+          service::create([
+           'bande_id' =>$request->bande_id,
+           'serviceTitre' => $request->serviceTitre,
+          'description' =>$request->description,
+          'cover' => $filenameImg,
+          ]);
+          return back()->with(['message'=>'Enregistrement réussit',"type"=>"success"]);
+      } else {
+          return back()->with(['message'=>'Merci de vérifier le formulaire!',"type"=>"danger"]);
+      }
+    }else{
+        return back()->with(['message'=>$por->errors()->first(),'type'=>"danger"]);
+    }
     }
 
     /**

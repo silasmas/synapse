@@ -16,9 +16,13 @@
                             <div class="container">
                                 <div class="slider-des">
                                     <div class="sl-subtitle">Sustainable Finance</div>
-                                    <h1 class="sl-title">We transform <br>your business </h1>
+                                    <h1 class="sl-title">La solution à<br>votre portée</h1>
                                 </div>
-                                <div class="desc">Excepteur sint cupidatat non proident, sunt in coulpa qui official mollit anim id est laborum 20 years experience.</div>
+                                <div class="desc">
+                                    Ceux qui sont avides de répondre à vos besoins dans 
+                                    le souci de vous apporter satisfaction avec plus de 
+                                    10 ans d'expérience de travail acharné.
+                                </div>
                                 <div class="slider-bottom ">
                                     <a class="readon consultant slider" href="contact.html">Discover More</a>
                                 </div>
@@ -31,9 +35,13 @@
                             <div class="container">
                                 <div class="slider-des">
                                     <div class="sl-subtitle">Discover your business</div>
-                                    <h1 class="sl-title">We Promote <br>Your Business</h1>
+                                    <h1 class="sl-title">La solution à<br>votre portée</h1>
                                 </div>
-                                <div class="desc">Excepteur sint cupidatat non proident, sunt in coulpa qui official mollit anim id est laborum 20 years experience.</div>
+                                <div class="desc">
+                                    Ceux qui sont avides de répondre à vos besoins dans 
+                                    le souci de vous apporter satisfaction avec plus de
+                                     10 ans d'expérience de travail acharné.
+                                </div>
                                 <div class="slider-bottom ">
                                     <a class="readon consultant" href="contact.html">Discover More</a>
                                 </div>
@@ -51,9 +59,15 @@
                         <div class="col-lg-6 pr-70 md-pr-15 md-mb-50">
                            <div class="sec-title2 mb-30">
                                 <div class="sub-text">Qui sommes nous</div>
-                                <h2 class="title mb-23">Nous élaborons vos idées et <span>plans d'affaires.</span></h2>
+                                <h4 class="title mb-23">Nous sommes une Entreprise des services sur <span>plusieurs domaines d'activités,
+                                    avec un objectif principal de satisfaire la clientèle au travers l’optimisation des résultats.</span></h4>
                                 <p class="desc mb-0">
-                                    Il n'y a pas non plus quelqu'un qui aime ou recherche ou désire obtenir la douleur par lui-même, parce que c'est de la douleur, mais il arrive parfois des circonstances dans lesquelles le travail et la douleur peuvent lui procurer un grand plaisir. Nous l'avons fait avec une juste indignation et n'aimons pas les hommes qui sont si séduits et démoralisés par le thème de l'entreprise de données 2021.
+                                    Nous œuvrons dans les domaines des solutions 
+                                    TIC (Technologies de l’Information et Communication) 
+                                    globales; de l'achat, l'importation, l'exportation,
+                                     la commercialisation, la représentation commerciale;
+                                      de L’Elevage et l’Agriculture ; de la commercialisation, 
+                                      la représentation commerciale et la distribution des produits des autres sociétés.
                                 </p>
                            </div>
                             <!-- Skillbar Section Start -->
@@ -102,15 +116,17 @@
                 <div class="container">
                     <div class="sec-title2 d-flex align-items-center mb-60 md-mb-40">
                         <div class="first-half">
-                            <div class="sub-text">1ière disposition des domaines</div>
+                            <div class="sub-text">Nos domaines d'activités</div>
                             <h2 class="title mb-0 md-pb-20">
                                 Les meilleures solutions pour votre entreprise - <span> ce que nous faisons.</span></h2>
                         </div>
                         <div class="last-half">
                             <p class="desc mb-0 pl-20 md-pl-15">
-                                Plus de 30 ans d'expérience dans le conseil en affaires et en finance,
-                                Solutions informatiques et collaboration avec plus de 5 000 clients dans le monde.
-                                 Chronologies de création du thème métier du conseil digital 2021.</p>
+                                Plus de 10 ans d'expérience dans le conseil en affaires 
+                                et en finance, Solutions informatiques, en importation 
+                                des biens et marchandises, en dédouanement et logistique, 
+                                et collaboration avec plus de 1 000 clients dans le monde, 
+                                réalisation des projets dans les domaines de l’Agriculture – Elevage – Aviculture.</p>
                         </div>
                     </div>
                     <div class="rs-carousel owl-carousel"
@@ -215,166 +231,6 @@
                     <a class="readon consultant discover mt-4" href="portfolio.html">Plus de branche</a>
                 </div>
             </div>
-            <!-- Premium Services Section End -->
-
-
-            <!-- Services Section Start -->
-            {{-- <div id="rs-services" class="rs-services home-style2 gray-bg pt-100 pb-100 md-pt-70 md-pb-70">
-                <div class="container">
-                    <div class="sec-title2 text-center md-left mb-40">
-                        <div class="sub-text">Why Choose Us</div>
-                        <h2 class="title">Obtenez nos services et attirez plus de <br><span>clients.</span></h2>
-                    </div>
-                    <div class="row y-middle">
-                        <div class="col-lg-4  md-mb-50 pr-30 md-pr-l5">
-                            <div class="services-item mb-45">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/1.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Expert peoples</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                            <div class="services-item mb-45">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/2.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Big experience</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                            <div class="services-item">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/3.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Financial control</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4  md-mb-50">
-                            <div class="rs-videos choose-video">
-                                <div class="images-video">
-                                    <img src="assets/images/choose-2.png" alt="images">
-                                </div>
-                                <div class="animate-border">
-                                    <a class="popup-border" href="https://www.youtube.com/watch?v=FMvA5fyZ338">
-                                        <i class="fa fa-play"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 pl-40 md-pl-15">
-                            <div class="services-item mb-45">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/4.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Committed quality</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                            <div class="services-item mb-45">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/5.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Award winning</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                            <div class="services-item">
-                                <div class="services-icon">
-                                    <img src="assets/images/service/6.png" alt="Images">
-                                </div>
-                                <div class="services-text">
-                                    <h3 class="title"><a href="services-style1.html">Insurance Policy</a></h3>
-                                    <p class="services-txt">Quisque placerat vitae ut scelerise consulting.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Counter Section End -->
-                <div class="rs-counter style1">
-                    <div class="container">
-                        <div class="counter-border-top">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-sm-6 md-mb-30">
-                                    <div class="counter-area">
-                                        <div class="counter-list mb-20">
-                                            <div class="counter-icon">
-                                                <img src="assets/images/service/1.png" alt="Counter">
-                                            </div>
-                                            <div class="counter-number">
-                                                <span class="rs-count">582</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-part">
-                                            <h5 class="title">Projects completed for our respected clients.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 md-mb-30">
-                                    <div class="counter-area">
-                                        <div class="counter-list mb-20">
-                                            <div class="counter-icon">
-                                                <img src="assets/images/service/2.png" alt="Counter">
-                                            </div>
-                                            <div class="counter-number">
-                                                <span class="rs-count">215</span>
-                                                <span class="prefix">+</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-part">
-                                            <h5 class="title">Experienced people serving to clients.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 xs-mb-30">
-                                    <div class="counter-area">
-                                        <div class="counter-list mb-20">
-                                            <div class="counter-icon">
-                                                <img src="assets/images/service/3.png" alt="Counter">
-                                            </div>
-                                            <div class="counter-number">
-                                                <span class="rs-count">25</span>
-                                                <span class="prefix">+</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-part">
-                                            <h5 class="title">Years experience in business & consulting.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="counter-area">
-                                        <div class="counter-list mb-20">
-                                            <div class="counter-icon">
-                                                <img src="assets/images/service/4.png" alt="Counter">
-                                            </div>
-                                            <div class="counter-number">
-                                                <span class="rs-count">70</span>
-                                                <span class="prefix">+</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-part">
-                                            <h5 class="title">Business & consulting awards won over world.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Counter Section End -->
-            </div> --}}
-            <!-- Services Section End -->
-
-
             <!-- Process Section Start -->
             <div class="rs-process style1 bg2 pt-100 pb-100 md-pt-70 md-pb-70"
             style="background-image: url('{{asset('assets/images/ser-bg.png')}}') !important;">

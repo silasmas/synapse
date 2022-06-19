@@ -7,10 +7,10 @@
                     <div class="footer-logo mb-40">
                         <a href="index.html">
                             <img src="assets/images/logo.png" alt="">
-                            <div class="brand">
+                            <span class="brand">
                                 <span>Groupe</span>
-                                <span>Synapse</span>
-                            </div>
+                                <span><span>Syn</span><span class="text-danger">apse</span></span>
+                            </span>
                         </a>
                     </div>
                       <div class="textwidget white-color pb-40"><p>

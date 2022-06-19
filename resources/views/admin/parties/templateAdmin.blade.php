@@ -83,8 +83,8 @@
                                         <a href="{{ route('inserbranche')}}">
                                              <span class="nav-label">Branche & Service</span></a>
                                         </li>
-                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="">Partenaire</a></li>
-                                    <li class="{{ $titre=="G_accueil"?"active":"" }}"><a href="">Témoignage</a></li>
+                                    <li class="{{ $titre=="Slide"?"active":"" }}"><a href="{{ route('inserpartenaire')}}">Partenaire</a></li>
+                                    <li class="{{ $titre=="G_accueil"?"active":"" }}"><a href="{{ route('insertemoignage')}}">Témoignage</a></li>
                                 </ul>
                             </li>
 

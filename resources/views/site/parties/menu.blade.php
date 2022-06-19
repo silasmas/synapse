@@ -64,8 +64,8 @@
                             <a href="index.html">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                                 <div class="brand">
-                                    <span>Groupe</span>
-                                    <span>Synapse</span>
+                                    <span class="text-danger">Groupe</span>
+                                    <span><div>Syn</div><div class="text-danger">apse</div></span>
                                 </div>
                             </a>
                         </div>
@@ -76,7 +76,7 @@
                                 <nav class="rs-menu hidden-md">
                                     <ul class="nav-menu">
                                         <li><a href="#rs-header" class="active">Accueil</a></li>
-                                        <li><a href="#rs-about">A propo</a> </li>
+                                        <li><a href="#rs-about">A propos</a> </li>
                                         <li><a href="#rs-services">Branches</a> </li>
                                         <li><a href="#rs-blog">Partenaires</a> </li>
                                         <li><a href="#rs-contact">Contact</a> </li>
@@ -125,7 +125,7 @@
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                     <div class="brand">
                         <span>Groupe</span>
-                        <span>Synapse</span>
+                        <span><div>Syn</div><div class="text-danger">apse</div></span>
                     </div>
                 </a>
             </div>
@@ -188,7 +188,7 @@
             </div>
             <ul class="nav-menu onepage-menu">
                 <li class="current-menu-item"><a href="#rs-header">Accueil</a></li>
-                <li><a href="#rs-about">A propo</a> </li>
+                <li><a href="#rs-about">A propos</a> </li>
                 <li><a href="#rs-services">Branches </a> </li>
                 <li><a href="#rs-blog">Partenaires</a> </li>
                 <li><a href="#rs-contact">Contact</a> </li>
