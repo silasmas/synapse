@@ -17,9 +17,8 @@ use App\Http\Controllers\TemoignageController;
 |
 */
 
-Route::get('/', function () {
-    return view('site.pages.index');
-});
+
+Route::get('/', [BandeController::class, 'home'])->name('home');
 Route::get('/admin', function () {
     return view('auth.login');
 })->name('admin');

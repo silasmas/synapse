@@ -99,7 +99,7 @@
                                 <img src="{{ asset('assets/images/about-2.png') }}" alt="images">
                                 <div class="working-experiance">
                                     <div class="experience-year">
-                                        <div class="count-year plus"><span class="sub-text">25+</span></div>
+                                        <div class="count-year plus"><span class="sub-text">10+</span></div>
                                         <h4 class="title mb-0">Ans d'experiences</h4>
                                     </div>
                                 </div>
@@ -157,76 +157,22 @@
                         data-mobile-device="1"
                         data-mobile-device-nav="false"
                         data-mobile-device-dots="true">
+
+                        @forelse ($branches as $b)
                         <div class="service-wrap">
                             <div class="image-part">
-                                <img src="assets/images/services/1.jpg" alt="">
+                                <img src="{{ asset('storage/'.$b->image) }}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
+                                <h3 class="title"><a href="business-planning.html">{{ $b->titre }}</a></h3>
+                                <div class="desc"> {!! Str::limit(strip_tags($b->description) , 50, '...') !!}</div>
                                 <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                             </div>
                         </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/2.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="tax-strategy.html">Tax Strategy</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/3.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="financial-advices.html">Financial Advices</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/6.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="insurance-strategy.html">Insurance Strategy</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/5.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="start-ups.html">Start Ups</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/6.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="manage-investment.html">Investment</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
-                        <div class="service-wrap">
-                            <div class="image-part">
-                                <img src="assets/images/services/1.jpg" alt="">
-                            </div>
-                            <div class="content-part">
-                                <h3 class="title"><a href="business-planning.html">Business Planning</a></h3>
-                                <div class="desc">We denounce with indignation on and dislike men who are so begui led and demoralized data.</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
-                            </div>
-                        </div>
+                        @empty
+                            <h3 class="text-danger">Pas des branches disponible</h3>
+                        @endforelse
+                      
                     </div>
                     <a class="readon consultant discover mt-4" href="portfolio.html">Plus de branche</a>
                 </div>
@@ -363,48 +309,19 @@
                     data-mobile-device="2"
                     data-mobile-device-nav="false"
                     data-mobile-device-dots="false">
+
+                    @forelse ($partenaires as $p)
                     <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/1.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/1.png" title="" alt="">
+                        <a href="#">
+                            <img class="hovers-logos rs-grid-img" src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
+                            <img class="mains-logos rs-grid-img " src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
                         </a>
                     </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/2.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/2.png" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/3.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/3.png" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/4.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/4.png" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/5.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/5.png" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/6.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/6.png" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="logo-img">
-                        <a href="https://rstheme.com">
-                            <img class="hovers-logos rs-grid-img" src="assets/images/partner/7.png" title="" alt="">
-                            <img class="mains-logos rs-grid-img " src="assets/images/partner/7.png" title="" alt="">
-                        </a>
-                    </div>
+                    @empty
+                    <h3 class="text-danger">Pas des partenaire disponible</h3>
+                    @endforelse
+                   
+                  
                 </div>
             </div>
         </div>
@@ -420,152 +337,31 @@
                         <h2 class="title mb-0 white-color">Que disent nos clients<br> de nous</h2>
                     </div>
                     <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>
-                                    Le support client est excellent et la documentation est bonne - les novices peuvent facilement comprendre. Bien que j'ai eu un problème avec les performances, grâce au support client, nous avons également résolu ce problème.
-                                </p>
+                    @forelse ($temoignages as $t)
+                    <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
+                        <div class="item-content">
+                            <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
+                            <p>
+                             {{ $t->description }}
+                            </p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="image-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
+                                <img src="{{ asset('storage/'.$t->photo) }}" alt="Testimonial">
                             </div>
-                            <div class="testi-content">
-                                <div class="image-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                                    <img src="assets/images/testimonial/1.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">David Warner</div>
-                                    <span class="testi-title">Envato User</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
+                            <div class="testi-information">
+                                <div class="testi-name">{{ $t->prenom." ".$t->nom }}</div>
+                                <span class="testi-title">#{{ $t->metier }}</span>
+                                <div class="ratting-img">
+                                    <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
                                 </div>
                             </div>
                         </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/2.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Emily Blunt</div>
-                                    <span class="testi-title">Web Developer</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/3.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Ansu Fati</div>
-                                    <span class="testi-title">Marketing</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/4.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Angelina Jolie</div>
-                                    <span class="testi-title">Graphic Designer</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/1.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">David Warner</div>
-                                    <span class="testi-title">Envato User</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/2.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Emily Blunt</div>
-                                    <span class="testi-title">Web Developer</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/3.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Ansu Fati</div>
-                                    <span class="testi-title">Marketing</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
-                            <div class="item-content">
-                                <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
-                                <p>Customer support is excellent and documentation good – novice can easily understand. Although I had a problem with the performance, thanks to the customer support, we have solved this problem as well.</p>
-                            </div>
-                            <div class="testi-content">
-                                <div class="image-wrap">
-                                    <img src="assets/images/testimonial/4.jpg" alt="Testimonial">
-                                </div>
-                                <div class="testi-information">
-                                    <div class="testi-name">Angelina Jolie</div>
-                                    <span class="testi-title">Graphic Designer</span>
-                                    <div class="ratting-img">
-                                        <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    @empty
+                        
+                    @endforelse                      
+                        
                     </div>
                 </div>
             </div>

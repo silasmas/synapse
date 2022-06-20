@@ -6,7 +6,9 @@ use App\Models\bande;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorebandeRequest;
 use App\Http\Requests\UpdatebandeRequest;
+use App\Models\partenaire;
 use App\Models\service;
+use App\Models\temoignage;
 use Illuminate\Support\Facades\Validator;
 
 class BandeController extends Controller
@@ -22,6 +24,13 @@ class BandeController extends Controller
         return view("admin.pages.home", compact('branches'));
     }
 
+    public function home()
+    {
+        $branches = bande::get();
+        $temoignages = temoignage::get();
+        $partenaires = partenaire::get();
+        return view('site.pages.index', compact("branches", "temoignages", "partenaires"));
+    }
     /**
      * Show the form for creating a new resource.
      *
