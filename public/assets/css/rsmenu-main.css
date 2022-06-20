@@ -135,28 +135,39 @@ Version: 1.0.0
 }
 .footer-logo .brand span {
     display: block;
+	font-family: Monotype Corsiva;
 }
 .footer-logo .brand span:first-child {
     font-size: 14px;
     font-weight: 700;
+	color:#bb0b0b;
 }
 .footer-logo .brand span:last-child {
     font-size: 16px;
     font-weight: 900;
+}
+.footer-logo .brand span:last-child div:last-child{
+	color: #bb0b0b;
 }
 .full-width-header .rs-header.style2 .menu-area .main-menu .rs-menu ul.nav-menu li a.active{
     color: #bb0b0b;
 }
 .full-width-header .right_menu_togle .canvas-logo a .brand span{
     display: block;
+	font-family: Monotype Corsiva;
 }
 .full-width-header .right_menu_togle .canvas-logo a .brand span:first-child{
     font-size: 14px;
     font-weight: 700;
+	color: #bb0b0b;
 }
 .full-width-header .right_menu_togle .canvas-logo a .brand span:last-child{
     font-size: 16px;
     font-weight: 900;
+
+}
+.full-width-header .right_menu_togle .canvas-logo a .brand span:last-child div:last-child{
+color:#bb0b0b;
 }
 .rs-header .menu-area .logo-area {
     position: relative;
@@ -176,6 +187,7 @@ Version: 1.0.0
 }
 .rs-header .menu-area .logo-area a .brand span{
     display: block;
+	font-family: Monotype Corsiva;
 }
 .rs-header .menu-area .logo-area a .brand span:first-child{
     font-size: 18px;
@@ -184,6 +196,9 @@ Version: 1.0.0
 .rs-header .menu-area .logo-area a .brand span:last-child{
     font-size: 20px;
     font-weight: 900;
+}
+.rs-header .menu-area .logo-area a .brand span:last-child div:last-child{
+	color: #bb0b0b;
 }
 .rs-header .menu-area .logo-area img{
     max-width: 100%;

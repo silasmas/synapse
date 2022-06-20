@@ -9,7 +9,7 @@
                             <img src="assets/images/logo.png" alt="">
                             <span class="brand">
                                 <span>Groupe</span>
-                                <span><span>Syn</span><span class="text-danger">apse</span></span>
+                                <span class="d-flex"><div>Syn</div><div>apse</div></span>
                             </span>
                         </a>
                     </div>

@@ -65,7 +65,7 @@
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                                 <div class="brand">
                                     <span class="text-danger">Groupe</span>
-                                    <span><div>Syn</div><div class="text-danger">apse</div></span>
+                                    <span class="d-flex"><div>Syn</div><div >apse</div></span>
                                 </div>
                             </a>
                         </div>
@@ -125,7 +125,7 @@
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                     <div class="brand">
                         <span>Groupe</span>
-                        <span><div>Syn</div><div class="text-danger">apse</div></span>
+                        <span class="d-flex"><div>Syn</div><div >apse</div></span>
                     </div>
                 </a>
             </div>
