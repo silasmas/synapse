@@ -342,7 +342,7 @@
                         <div class="item-content">
                             <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
                             <p>
-                             {{ $t->description }}
+                             {!! $t->description !!}
                             </p>
                         </div>
                         <div class="testi-content">
