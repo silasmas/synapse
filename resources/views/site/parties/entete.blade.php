@@ -8,8 +8,7 @@
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo.png') }}">
         <!-- Bootstrap v4.4.1 css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
