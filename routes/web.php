@@ -24,12 +24,13 @@ Route::get('/admin', function () {
     return view('auth.login');
 })->name('admin');
 
-Route::get('/dashboard', function () {
-    return view('admin.pages.home');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('admin.pages.home');
+// })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('G_branche', [BandeController::class, 'index'])->name('G_branche');
+    Route::get('dashboard', [BandeController::class, 'index'])->name('dashboard');
+    // Route::get('G_branche', [BandeController::class, 'index'])->name('G_branche');
     Route::get('G_temoignage', [TemoignageController::class, 'index'])->name('G_temoignage');
     Route::get('G_partenaire', [PartenaireController::class, 'index'])->name('G_partenaire');
 
@@ -42,5 +43,22 @@ Route::middleware(['auth'])->group(function () {
     Route::post('storeService', [ServiceController::class, 'store'])->name('storeService');
     Route::post('storepartenaire', [PartenaireController::class, 'store'])->name('storepartenaire');
     Route::post('storetemoignage', [TemoignageController::class, 'store'])->name('storetemoignage');
+
+
+    Route::get('detailBranche/{id}', [BandeController::class, 'show'])->name('detailBranche');
+    Route::get('editService/{id}', [ServiceController::class, 'edit'])->name('editService');
+    Route::get('editBrance/{id}', [BandeController::class, 'edit'])->name('editBrance');
+    Route::get('editTemoignage/{id}', [TemoignageController::class, 'edit'])->name('editTemoignage');
+    Route::get('editPartenaire/{id}', [PartenaireController::class, 'edit'])->name('editPartenaire');
+
+    Route::post('updateService', [ServiceController::class, 'update'])->name('updateService');
+    Route::post('updateBranche', [BandeController::class, 'update'])->name('updateBranche');
+    Route::post('updateTemoignage', [TemoignageController::class, 'update'])->name('updateTemoignage');
+    Route::post('updatePartenaire', [PartenaireController::class, 'update'])->name('updatePartenaire');
+
+    Route::get('deleteService/{id}', [ServiceController::class, 'destroy'])->name('deleteService');
+    Route::get('deleteBranche/{id}', [BandeController::class, 'destroy'])->name('deleteBranche');
+    Route::get('deleteTemoignage/{id}', [TemoignageController::class, 'destroy'])->name('deleteTemoignage');
+    Route::get('deletePartenaire/{id}', [PartenaireController::class, 'destroy'])->name('deletePartenaire');
 });
 require __DIR__ . '/auth.php';

@@ -43,32 +43,32 @@
                                     </div>
                                     <div class='row'>
                                         <div class=" col-lg-12 col-sm-12">
-                                            <form method="POST" class="" action="{{ route('storetemoignage') }}"
+                                            <form method="POST" class="" action="{{ isset($temoignage)?route('updateTemoignage') :route('storetemoignage') }}"
                                                 class='form-group' data-parsley-validate enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div>
-                                                        <input name="id" hidden value="" />
+                                                        <input name="id" hidden value="{{ isset($temoignage)?$temoignage->id :""}}" />
                                                     </div>
                                                     <div class="col-sm-6 form-group ">
                                                         <label>Nom</label>
                                                         <input type="text" placeholder="Nom"
                                                             class="form-control" name='nom' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            aria-required="true" value="{{ isset($temoignage)?$temoignage->nom :""}}" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
                                                     </div>
                                                     <div class="col-sm-6 form-group ">
                                                         <label>Prenom</label>
                                                         <input type="text" placeholder="Prenom"
                                                             class="form-control" name='prenom' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            aria-required="true" value="{{ isset($temoignage)?$temoignage->prenom :""}}" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
                                                     </div>
                                                     <div class="col-sm-6 form-group ">
                                                         <label>Metier</label>
                                                         <input type="text" placeholder="Metier"
                                                             class="form-control" name='metier' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            aria-required="true" value="{{ isset($temoignage)?$temoignage->metier :""}}" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
                                                     </div>
                                                     <div class="col-sm-6 form-group">
@@ -82,8 +82,7 @@
                                                             <span class="input-group-addon btn btn-default btn-file"><span
                                                                     class="fileinput-new">Photo</span>
                                                                 <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="photo" required
-                                                                    aria-required="true"></span>
+                                                                    type="file" name="photo" {{ isset($temoignage)?"":"required"}}></span>
                                                             <a href="#"
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
@@ -94,13 +93,19 @@
                                                         <label>Témoignage </label>
                                                         <textarea name="description" class="summernote" rows="12" data-parsley-trigger="change" required
                                                             aria-required="true">
+                                                            {{ isset($temoignage)?$temoignage->description :""}}
                                                 </textarea>
                                                     </div>
                                                     <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
 
                                                         <div class="col-sm-offset-4 col-sm-5">
+                                                            @if (isset($temoignage))
                                                             <button class="ladda-button btn btn-sm btn-primary" 
                                                                 type="submit">Enregistrer</button>
+                                                         @else
+                                                         <button class="ladda-button btn btn-sm btn-primary" 
+                                                         type="submit">Modifier</button> 
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>

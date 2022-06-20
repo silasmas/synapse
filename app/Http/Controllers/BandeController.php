@@ -6,6 +6,7 @@ use App\Models\bande;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorebandeRequest;
 use App\Http\Requests\UpdatebandeRequest;
+use App\Models\service;
 use Illuminate\Support\Facades\Validator;
 
 class BandeController extends Controller
@@ -70,9 +71,11 @@ class BandeController extends Controller
      * @param  \App\Models\bande  $bande
      * @return \Illuminate\Http\Response
      */
-    public function show(bande $bande)
+    public function show($id)
     {
-        //
+        $detail = bande::where("id", $id)->first();
+        $branches = bande::get();
+        return view('admin.pages.service', compact("detail", "branches"));
     }
 
     /**
@@ -81,9 +84,12 @@ class BandeController extends Controller
      * @param  \App\Models\bande  $bande
      * @return \Illuminate\Http\Response
      */
-    public function edit(bande $bande)
+    public function edit($id)
     {
-        //
+        $branche = bande::find($id);
+        $branches = bande::get();
+        //dd($service);
+        return view("admin.pages.addBande", compact("branche", "branches"));
     }
 
     /**
@@ -93,9 +99,24 @@ class BandeController extends Controller
      * @param  \App\Models\bande  $bande
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatebandeRequest $request, bande $bande)
+    public function update(Request $request)
     {
-        //
+        if ($request->id != "") {
+            $line = bande::findOrFail($request->id);
+            if ($line) {
+                $file = $request->file('image');
+                $file == '' ? '' : ($filenameImg = 'branches/' . time() . '.' . $file->getClientOriginalName());
+                $file == '' ? '' : $file->move('storage/branches', $filenameImg);
+
+                $request->titre == "" ? $line->titre = $line->titre : $line->titre = $request->titre;
+                $request->description == "" ? $line->description = $line->description : $line->description = $request->description;
+                $request->image == "" ? $line->image = $line->image : $line->image = $filenameImg;
+                $line->save();
+                return back()->with(['message' => 'Modification réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        }
     }
 
     /**
@@ -104,8 +125,29 @@ class BandeController extends Controller
      * @param  \App\Models\bande  $bande
      * @return \Illuminate\Http\Response
      */
-    public function destroy(bande $bande)
+    public function destroy($id)
     {
-        //
+        $part = bande::find($id);
+        $ser = service::where("bande_id", $id)->get();
+        if ($ser) {
+            foreach ($ser as $s) {
+                $cover = public_path() . '/storage/' . $s->cover;
+                file_exists($cover) ? unlink($cover) : '';
+            }
+        }
+        $cover = public_path() . '/storage/' . $part->image;
+        file_exists($cover) ? unlink($cover) : '';
+        $rep = $part->delete();
+        if ($rep) {
+            return response()->json([
+                'reponse' => true,
+                'msg' => 'Suppression Réussie',
+            ]);
+        } else {
+            return response()->json([
+                'reponse' => false,
+                'msg' => 'Errur',
+            ]);
+        }
     }
 }

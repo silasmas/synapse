@@ -21,22 +21,27 @@
             <div class="col-lg-12">
                 <div class="tabs-container">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#tab-branch">
+                        <li class="{{isset($service)?"":"active" }}"><a data-toggle="tab" href="#tab-branch">
                                 Ajouter branche
                                 <span class="label label-warning">Formulaire</span>
                             </a>
                         </li>
-                        <li><a data-toggle="tab" href="#tab-service">
+                        <li class="{{isset($service)?"active":"" }}"><a data-toggle="tab" href="#tab-service">
                                 Ajouter Service
                                 <span class="label label-warning">Formulaire</span>
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="tab-branch">
+                        <div class="tab-pane {{isset($service)?"":"active" }}" id="tab-branch">
                             <div class="panel-body">
                                 <div class="ibox-title">
+                                    @if (isset($branche))
+                                    <h5>Ce formulaire vous permet de modifier une branche</h5>
+                                    @else
                                     <h5>Ce formulaire vous permet d'enregistrer une branche</h5>
+                                    @endif
+                                   
                                 </div>
                                 <div class="ibox-content">
                                     <div class="sk-spinner sk-spinner-wandering-cubes">
@@ -45,24 +50,19 @@
                                     </div>
                                     <div class='row'>
                                         <div class=" col-lg-12 col-sm-12">
-                                            <form method="POST" class="" action="{{ route('storeBranche') }}"
+                                            <form method="POST" class="" action="{{ isset($branche)?route('updateBranche'):route('storeBranche')  }}"
                                                 class='form-group' data-parsley-validate enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div>
-                                                        <input name="id" hidden value="" />
+                                                        <input name="id" hidden value="{{ isset($branche)?$branche->id:"" }}" />
                                                     </div>
                                                     <div class="col-sm-12 form-group ">
                                                         <label>Titre de la brache</label>
                                                         <input type="text" placeholder="Titre de la brache"
                                                             class="form-control" name='titre' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
-                                                            data-parsley-trigger="change">
-                                                        @if ($errors->has('titre'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('titre') }}</strong>
-                                                            </span>
-                                                        @endif
+                                                            aria-required="true" value="{{ isset($branche)?$branche->titre:"" }}" data-parsley-minlength="2"
+                                                            data-parsley-trigger="change">                                                        
                                                     </div>
                                                     <div class="col-sm-12 form-group">
                                                         <label>Image</label>
@@ -75,8 +75,7 @@
                                                             <span class="input-group-addon btn btn-default btn-file"><span
                                                                     class="fileinput-new">Image</span>
                                                                 <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="image" required
-                                                                    aria-required="true"></span>
+                                                                    type="file" name="image" {{ isset($branche)?"":"required" }}></span>
                                                             <a href="#"
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
@@ -86,13 +85,14 @@
                                                         <label>Description </label>
                                                         <textarea name="description" class="summernote" rows="12" data-parsley-trigger="change" required
                                                             aria-required="true">
+                                                            {{ isset($branche)?$branche->description:"" }}
                                                 </textarea>
                                                     </div>
                                                     <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
 
                                                         <div class="col-sm-offset-4 col-sm-5">
                                                             <button class="ladda-button btn btn-sm btn-primary" 
-                                                                type="submit">Enregistrer</button>
+                                                                type="submit">{{ isset($branche)?"Modifier":"Enregistrer" }}</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab-service">
+                        <div class="tab-pane {{isset($service)?"active":"" }}" id="tab-service">
                             <div class="panel-body">
                                 <div class="ibox-title">
                                     <h5>Ce formulaire vous permet d'enregistrer le service d'une branche</h5>
@@ -114,22 +114,22 @@
                                     </div>
                                     <div class='row'>
                                         <div class=" col-lg-12 col-sm-12">
-                                            <form id="formFidel" method="POST" class="" action="{{ route('storeService') }}"
+                                            <form id="formFidel" method="POST" class="" action="{{isset($service)?route('updateService'):route('storeService') }}"
                                                 class='form-group' data-parsley-validate enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div>
-                                                        <input name="id" hidden value="" />
+                                                        <input name="id" hidden value="{{ isset($service)?$service->id:"" }}" />
                                                     </div>                                                  
                                                     <div class="col-sm-6 form-group ">
                                                         <label>Branches</label>
                                                         <select class=" form-control" id="" required aria-required="true"
                                                             class="validate" data-parsley-trigger="change"
                                                             name="bande_id">
-                                                            <option value="" disabled selected>Selectionnez une branches
+                                                            <option value=""  {{ isset($service)?" ":"disabled selected" }}>Selectionnez une branches
                                                             </option>
                                                            @forelse ($branches as $b)
-                                                           <option value="{{ $b->id }}">{{ $b->titre }}</option>
+                                                           <option value="{{ $b->id }}" {{isset($service) && $service->bande_id==$b->id?"selected":"" }}>{{ $b->titre }}</option>
                                                            @empty
                                                                
                                                            @endforelse
@@ -139,7 +139,7 @@
                                                         <label>Titre du service</label>
                                                         <input type="text" placeholder="Titre du service"
                                                             class="form-control" name='serviceTitre' required
-                                                            aria-required="true" value="" data-parsley-minlength="2"
+                                                            aria-required="true" value="{{ isset($service)?$service->serviceTitre:"" }}" data-parsley-minlength="2"
                                                             data-parsley-trigger="change">
                                                     </div>
                                                     <div class="col-sm-12 form-group">
@@ -153,8 +153,8 @@
                                                             <span class="input-group-addon btn btn-default btn-file"><span
                                                                     class="fileinput-new">Image</span>
                                                                 <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="cover" required
-                                                                    aria-required="true"></span>
+                                                                    type="file" name="cover"  {{ isset($service)?"":"required"}}
+                                                                    ></span>
                                                             <a href="#"
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
@@ -164,6 +164,7 @@
                                                         <label>Description </label>
                                                         <textarea name="description" class="summernote" rows="12" data-parsley-trigger="change" required
                                                             aria-required="true">
+                                                            {{ isset($service)?$service->description:""}}
                                                 </textarea>
                                                     </div>
                                                     <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
@@ -172,7 +173,7 @@
 
                                                             <button class="ladda-button btn btn-sm btn-primary"
                                                                 id='ladda-session' data-style="expand-right"
-                                                                type="submit">Enregistrer</button>
+                                                                type="submit">{{ isset($service)?"Modifier":"Enregistrer"}}</button>
                                                         </div>
                                                     </div>
                                                 </div>

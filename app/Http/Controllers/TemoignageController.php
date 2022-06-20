@@ -81,9 +81,10 @@ class TemoignageController extends Controller
      * @param  \App\Models\temoignage  $temoignage
      * @return \Illuminate\Http\Response
      */
-    public function edit(temoignage $temoignage)
+    public function edit($id)
     {
-        //
+        $temoignage = temoignage::find($id);
+        return view("admin.pages.addTemoignage", compact("temoignage"));
     }
 
     /**
@@ -93,9 +94,26 @@ class TemoignageController extends Controller
      * @param  \App\Models\temoignage  $temoignage
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatetemoignageRequest $request, temoignage $temoignage)
+    public function update(Request $request)
     {
-        //
+        if ($request->id != "") {
+            $line = temoignage::findOrFail($request->id);
+            if ($line) {
+                $file = $request->file('photo');
+                $file == '' ? '' : ($filenameImg = 'temoignage/' . time() . '.' . $file->getClientOriginalName());
+                $file == '' ? '' : $file->move('storage/temoignage', $filenameImg);
+
+                $request->nom == "" ? $line->nom = $line->nom : $line->nom = $request->nom;
+                $request->prenom == "" ? $line->prenom = $line->prenom : $line->prenom = $request->prenom;
+                $request->metier == "" ? $line->metier = $line->metier : $line->metier = $request->metier;
+                $request->description == "" ? $line->description = $line->description : $line->description = $request->description;
+                $request->photo == "" ? $line->photo = $line->photo : $line->photo = $filenameImg;
+                $line->save();
+                return back()->with(['message' => 'Modification réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        }
     }
 
     /**
@@ -104,8 +122,22 @@ class TemoignageController extends Controller
      * @param  \App\Models\temoignage  $temoignage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(temoignage $temoignage)
+    public function destroy($id)
     {
-        //
+        $part = temoignage::find($id);
+        $cover = public_path() . '/storage/' . $part->photo;
+        file_exists($cover) ? unlink($cover) : '';
+        $rep = $part->delete();
+        if ($rep) {
+            return response()->json([
+                'reponse' => true,
+                'msg' => 'Suppression Réussie',
+            ]);
+        } else {
+            return response()->json([
+                'reponse' => false,
+                'msg' => 'Errur',
+            ]);
+        }
     }
 }

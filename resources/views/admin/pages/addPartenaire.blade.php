@@ -30,7 +30,11 @@
                             <div class="col-lg-12">
                                 <div class="tabs-container">
                                     <div class="ibox-title">
-                                        <h5>Ce formulaire vous permet d'enregistrer un partenaire</h5>
+                                        @if (isset($partenaire))                                            
+                                        <h5>Ce formulaire vous permet de modifier un partenaire</h5>
+                                        @else
+                                        <h5>Ce formulaire vous permet d'enregistrer un partenaire</h5>                                            
+                                        @endif
                                     </div>
                                     <div class="col-lg-offset-1 col-lg-10 col-sm-12">
                                         <div class="ibox" id="tabCat">
@@ -41,15 +45,18 @@
                                                 </div>
                                                 <div class='row'>
                                                     <div class=" col-lg-12 col-sm-12">
-                                                        <form id="" method="POST" action="{{ route('storepartenaire') }}"
+                                                        <form id="" method="POST" action="{{isset($partenaire)?route('updatePartenaire'):route('storepartenaire') }}"
                                                             class="" data-parsley-validate enctype="multipart/form-data">
                                                             @csrf
                                                             <div class="row">
+                                                                <div>
+                                                                    <input name="id" hidden value="{{ isset($partenaire)?$partenaire->id:"" }}" />
+                                                                </div>  
                                                                 <div class="col-lg-12 form-group ">
                                                                     <label>Nom du partenaire</label>
                                                                     <input type="text" class="form-control"
                                                                         name='titre' required
-                                                                        value="{{ isset($fonctions) ? $fonctions->fonction : '' }}"
+                                                                        value="{{ isset($partenaire) ? $partenaire->titre : '' }}"
                                                                         aria-required="true" data-parsley-minlength="2"
                                                                         data-parsley-trigger="change">
                                                                 </div>
@@ -65,8 +72,7 @@
                                                                         <span class="input-group-addon btn btn-default btn-file"><span
                                                                                 class="fileinput-new">Logo</span>
                                                                             <span class="fileinput-exists">Changer</span><input
-                                                                                type="file" name="logo" required
-                                                                                aria-required="true"></span>
+                                                                                type="file" name="logo"  {{ isset($partenaire)?"":"required" }}></span>
                                                                         <a href="#"
                                                                             class="input-group-addon btn btn-default fileinput-exists"
                                                                             data-dismiss="fileinput">Supprimer</a>
@@ -76,7 +82,7 @@
                                                                     <div class="col-sm-offset-4 col-sm-5">
                                                                         <button class="ladda-button btn btn-sm btn-primary"
                                                                             id='ladda-session' data-style="expand-right"
-                                                                            type="submit">{{ isset($fonctions) ? 'Modifier' : 'Enregistrer' }}</button>
+                                                                            type="submit">{{ isset($partenaire) ? 'Modifier' : 'Enregistrer' }}</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -16,8 +16,8 @@ class PartenaireController extends Controller
      */
     public function index()
     {
-        $partenaire = partenaire::get();
-        return view("admin.pages.partenaire", compact('partenaire'));
+        $partenaires = partenaire::get();
+        return view("admin.pages.partenaire", compact('partenaires'));
     }
 
     /**
@@ -27,7 +27,8 @@ class PartenaireController extends Controller
      */
     public function create()
     {
-        return view("admin.pages.addPartenaire");
+        $partenaires = partenaire::get();
+        return view("admin.pages.addPartenaire", compact('partenaires'));
     }
 
     /**
@@ -77,9 +78,10 @@ class PartenaireController extends Controller
      * @param  \App\Models\partenaire  $partenaire
      * @return \Illuminate\Http\Response
      */
-    public function edit(partenaire $partenaire)
+    public function edit($id)
     {
-        //
+        $partenaire = partenaire::find($id);
+        return view("admin.pages.addPartenaire", compact("partenaire"));
     }
 
     /**
@@ -89,9 +91,24 @@ class PartenaireController extends Controller
      * @param  \App\Models\partenaire  $partenaire
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatepartenaireRequest $request, partenaire $partenaire)
+    public function update(Request $request)
     {
-        //
+
+        if ($request->id != "") {
+            $line = partenaire::findOrFail($request->id);
+            if ($line) {
+                $file = $request->file('logo');
+                $file == '' ? '' : ($filenameImg = 'partenaires/' . time() . '.' . $file->getClientOriginalName());
+                $file == '' ? '' : $file->move('storage/partenaires', $filenameImg);
+
+                $request->titre == "" ? $line->titre = $line->titre : $line->titre = $request->titre;
+                $request->logo == "" ? $line->logo = $line->logo : $line->logo = $filenameImg;
+                $line->save();
+                return back()->with(['message' => 'Modification réussit', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        }
     }
 
     /**
@@ -100,8 +117,22 @@ class PartenaireController extends Controller
      * @param  \App\Models\partenaire  $partenaire
      * @return \Illuminate\Http\Response
      */
-    public function destroy(partenaire $partenaire)
+    public function destroy($id)
     {
-        //
+        $part = partenaire::find($id);
+        $cover = public_path() . '/storage/' . $part->logo;
+        file_exists($cover) ? unlink($cover) : '';
+        $rep = $part->delete();
+        if ($rep) {
+            return response()->json([
+                'reponse' => true,
+                'msg' => 'Suppression Réussie',
+            ]);
+        } else {
+            return response()->json([
+                'reponse' => false,
+                'msg' => 'Errur',
+            ]);
+        }
     }
 }

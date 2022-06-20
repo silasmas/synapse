@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class bande extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $guarded = [];
+    protected $with = ["service"];
 
-    public function service(){
+    public function service()
+    {
         return $this->hasMany(service::class);
     }
 }

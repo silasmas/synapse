@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class service extends Model
 {
     use HasFactory;
-    protected $guarded=[];
-
-    public function branche(){
+    protected $guarded = [];
+    protected $with = ["branche"];
+    public function branche()
+    {
         return $this->belongsTo(bande::class);
     }
 }

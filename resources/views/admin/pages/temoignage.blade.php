@@ -70,8 +70,11 @@
                                     <p>
                                         {!! $t->description !!}
                                     </p>
-                                    <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                    <a href="{{ route('editTemoignage', ['id'=>$t->id]) }}"class="btn btn-primary btn-sm btn-block"><i
                                             class="fa fa-edit"></i> Modifier
+                                    </a>
+                                    <button onclick="supprimer('deleteTemoignage',this.title)" title="{{ $t->id }}" class="btn btn-danger btn-sm btn-block"><i
+                                            class="fa fa-trash"></i> Supprimer
                                     </button>
                                 </div>
                             </div>
