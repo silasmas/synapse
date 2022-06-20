@@ -53,7 +53,7 @@
         <!-- Nivo slider js -->
         <script src="{{ asset('assets/inc/custom-slider/js/jquery.nivo.slider.js') }}"></script>
         <!-- pointer js -->
-        <script src="{{ asset('assets/js/pointer.js') }}"></script>
+        {{-- <script src="{{ asset('assets/js/pointer.js') }}"></script> --}}
         <!-- contact form js -->
         <script src="{{ asset('assets/js/contact.form.js') }}"></script>
         <!-- main js -->
