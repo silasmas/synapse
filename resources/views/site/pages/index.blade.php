@@ -161,7 +161,7 @@
                         @forelse ($branches as $b)
                         <div class="service-wrap">
                             <div class="image-part">
-                                <img src="{{ asset('storage/'.$b->image) }}" alt="" height="260" width="360">
+                                <img src="{{ asset('storage/'.$b->image) }}" alt="" height="260" width="360" style="height: 260px !important;width: 360px !important">
                             </div>
                             <div class="content-part">
                                 <h3 class="title"><a href="business-planning.html">{{ $b->titre }}</a></h3>
