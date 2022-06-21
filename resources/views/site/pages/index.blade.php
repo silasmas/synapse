@@ -312,9 +312,9 @@
 
                     @forelse ($partenaires as $p)
                     <div class="logo-img">
-                        <a href="#">
-                            <img class="hovers-logos rs-grid-img" src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
-                            <img class="mains-logos rs-grid-img " src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
+                        <a href="#"  >
+                            <img style="height: 100px !important;width: 100px !important" class="hovers-logos rs-grid-img" src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
+                            <img style="height: 100px !important;width: 100px !important" class="mains-logos rs-grid-img " src="{{ asset('storage/'.$p->logo) }}" title="" alt="{{ $p->titre }}">
                         </a>
                     </div>
                     @empty
