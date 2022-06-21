@@ -131,7 +131,7 @@
                     </div>
                     <div class="rs-carousel owl-carousel"
                         data-loop="true"
-                        data-items="3"
+                        data-items="{{$branches->count()>=5?"3":$branches->count()}}"
                         data-margin="30"
                         data-autoplay="true"
                         data-hoverpause="true"
@@ -141,7 +141,7 @@
                         data-nav="false"
                         data-nav-speed="false"
 
-                        data-md-device="3"
+                        data-md-device="{{$branches->count()>=5?"3":$branches->count()}}"
                         data-md-device-nav="false"
                         data-md-device-dots="true"
                         data-center-mode="false"
@@ -161,7 +161,7 @@
                         @forelse ($branches as $b)
                         <div class="service-wrap">
                             <div class="image-part">
-                                <img src="{{ asset('storage/'.$b->image) }}" alt="">
+                                <img src="{{ asset('storage/'.$b->image) }}" alt="" height="260" width="360">
                             </div>
                             <div class="content-part">
                                 <h3 class="title"><a href="business-planning.html">{{ $b->titre }}</a></h3>
@@ -283,7 +283,7 @@
             <div class="container custom">
                 <div class="rs-carousel owl-carousel"
                     data-loop="true"
-                    data-items="5"
+                    data-items="{{$partenaires->count()>=5?"5":$partenaires->count()}}"
                     data-margin="30"
                     data-autoplay="true"
                     data-hoverpause="true"
@@ -293,7 +293,7 @@
                     data-nav="false"
                     data-nav-speed="false"
 
-                    data-md-device="5"
+                    data-md-device="{{$partenaires->count()>=5?"5":$partenaires->count()}}"
                     data-md-device-nav="false"
                     data-md-device-dots="false"
                     data-center-mode="false"
@@ -336,7 +336,7 @@
                         <div class="sub-text">Temoignages</div>
                         <h2 class="title mb-0 white-color">Que disent nos clients<br> de nous</h2>
                     </div>
-                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="{{ $temoignages->count()>=3?"3":"1" }}" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="{{ $temoignages->count()>=3?"3":"1" }}" data-md-device-nav="false" data-md-device-dots="true">
                     @forelse ($temoignages as $t)
                     <div class="testi-wrap"  style="background-image: url('{{asset('assets/images/testimonial/test-bg.jpg')}}') !important;">
                         <div class="item-content">
@@ -351,7 +351,7 @@
                             </div>
                             <div class="testi-information">
                                 <div class="testi-name">{{ $t->prenom." ".$t->nom }}</div>
-                                <span class="testi-title">#{{ $t->metier }}</span>
+                                <span class="testi-title">{{ $t->metier }}</span>
                                 <div class="ratting-img">
                                     <img src="assets/images/testimonial/ratting.png" alt="Testimonial">
                                 </div>
