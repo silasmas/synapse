@@ -342,7 +342,7 @@
                         <div class="item-content">
                             <span><img src="assets/images/testimonial/quote.png" alt="Testimonial"></span>
                             <p>
-                             {!! Str::limit($t->description , 300, '...') !!}
+                             {!! Str::limit(strip_tags($t->description) , 300, '...') !!}
                             </p>
                         </div>
                         <div class="testi-content">
