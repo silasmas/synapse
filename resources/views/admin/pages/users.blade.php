@@ -25,7 +25,8 @@
                                                 <tr>
                                             <td class="client-avatar"><img alt="image" src="{{ asset('admin/img/default.png') }}"> </td>
                                             <td><a data-toggle="tab" href="#{{$t->id }}" class="client-link">{{ $t->name }}</a></td>
-                                            <td> {{ $t->prenom }}</td>                                            
+                                            <td> {{ $t->prenom }}</td> 
+                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>                                           
                                             <td> {{ $t->email }}</td>                                            
                                             <td class="client-status text-center"><span class="label label-primary">Date de création :{{ \Carbon\Carbon::parse($t->created_at)->isoFormat('LLL')  }}</span></td>
                                         </tr> 

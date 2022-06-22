@@ -24,6 +24,7 @@
                                             @forelse ($news as $t)
                                                 <tr>
                                                     <td class="client-avatar"><img alt="image" src="{{ asset('admin/img/default.png') }}"> </td>
+                                                    <td class="contact-type"><i class="fa fa-envelope"> </i></td>
                                                     <td><a data-toggle="tab" href="#{{$t->id}}" class="client-link">{{ $t->email }}</a></td>
                                                                                                
                                                     <td class="client-status text-center"><span class="label label-primary">Date d'envoie :{{ \Carbon\Carbon::parse($t->created_at)->isoFormat('LLL')  }}</span></td>
