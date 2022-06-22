@@ -79,7 +79,7 @@
                   </div>
                   <div class="col-lg-3 col-md-12 col-sm-12">
                       <h3 class="footer-title">Newsletter</h3>
-                      <p class="widget-desc white-color">Stay up to update with our latest news and products.</p>
+                      <p class="widget-desc white-color">Restez à jour avec nos dernières nouvelles et produits.</p>
                       
                       <form action="{{ route('newsletter') }}" id="newsletter" method="post" data-parsley-validate>
                           @csrf
