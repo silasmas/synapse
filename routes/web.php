@@ -21,6 +21,7 @@ use App\Http\Controllers\TemoignageController;
 
 Route::get('/', [BandeController::class, 'home'])->name('home');
 Route::post('sendmessage', [ContactController::class, 'store'])->name('sendmessage');
+Route::post('newsletter', [ContactController::class, 'newsletter'])->name('newsletter');
 Route::get('/admin', function () {
     return view('auth.login');
 })->name('admin');

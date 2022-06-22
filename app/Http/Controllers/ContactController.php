@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\contact;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
+use App\Models\newsletter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -61,6 +62,44 @@ class ContactController extends Controller
                     [
                         'reponse' => true,
                         'msg' => 'Message envoyer avec succès',
+                    ]
+                );
+            } else {
+                return response()->json(
+                    [
+                        'reponse' => false,
+                        'msg' => 'Erreur',
+                    ]
+                );
+            }
+        } else {
+            return response()->json(
+                [
+                    'reponse' => false,
+                    'msg' => $re->errors()->first(),
+                ]
+            );
+        }
+    }
+    public function newsletter(Request $request)
+    {
+        $re =   Validator::make(
+            $request->all(),
+            [
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:newsletter'],
+            ]
+        );
+        if ($re->passes()) {
+            $rep = newsletter::create(
+                [
+                    "email" => $request->email,
+                ]
+            );
+            if ($rep) {
+                return response()->json(
+                    [
+                        'reponse' => true,
+                        'msg' => 'Abonnement fait avec succès',
                     ]
                 );
             } else {

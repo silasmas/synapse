@@ -66,3 +66,54 @@
 			});
 	});
 })(jQuery);
+(function($) {
+	'use strict';
+	// Get the form.
+	var form = $('#newsletter');
+
+	
+	// Set up an event listener for the contact form.
+	$(form).submit(function(e) {
+		// Stop the browser from submitting the form.
+		e.preventDefault();
+		// Serialize the form data.
+		var formData = $(form).serialize();
+
+		// Submit the form using AJAX.
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		})
+			.done(function(response) {
+				if (response.reponse) {
+					swal({
+						title: response.msg,
+						icon: 'success'
+					});
+					// Clear the form.
+                    $(form)[0].reset();
+					// $('#nom, #email, #phone_number, #message').val('');
+				} else {
+					swal({
+						title: response.msg,
+						icon: 'error'
+					});
+				}
+			})
+			.fail(function(data) {
+				// Set the message text.
+				if (data.responseText !== '') {
+					swal({
+						title: response.msg,
+						icon: 'error'
+					});
+				} else {
+					swal({
+						title: response.msg,
+						icon:"Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
+					});
+				}
+			});
+	});
+})(jQuery);
