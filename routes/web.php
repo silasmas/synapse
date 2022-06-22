@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\TemoignageController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\TemoignageController;
 
 
 Route::get('/', [BandeController::class, 'home'])->name('home');
+Route::post('sendmessage', [ContactController::class, 'store'])->name('sendmessage');
 Route::get('/admin', function () {
     return view('auth.login');
 })->name('admin');

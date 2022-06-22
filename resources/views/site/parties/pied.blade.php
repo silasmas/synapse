@@ -56,6 +56,10 @@
         {{-- <script src="{{ asset('assets/js/pointer.js') }}"></script> --}}
         <!-- contact form js -->
         <script src="{{ asset('assets/js/contact.form.js') }}"></script>
+
+        <script src="{{ asset('admin/js/parsley/js/parsley.js') }}"></script>
+        <script src="{{ asset('admin/js/parsley/i18n/fr.js') }}"></script>
+        <script src="{{ asset('admin/js/sweetalert/sweetalert.min.js') }}"></script>
         <!-- main js -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <script async src='https://stackwhats.com/pixel/6002827c949da0324b45875d2a52dd'></script>

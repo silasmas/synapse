@@ -155,7 +155,7 @@ class BandeController extends Controller
         } else {
             return response()->json([
                 'reponse' => false,
-                'msg' => 'Errur',
+                'msg' => 'Erreur',
             ]);
         }
     }

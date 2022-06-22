@@ -384,24 +384,25 @@
                         <div class="col-lg-6">
                             <div class="contact-wrap">
                                 <div id="form-messages"></div>
-                                <form id="contact-form" method="post" action="mailer.php">
+                                <form id="contact-form" method="post" action="{{ route('sendmessage') }}" data-parsley-validate>
+                                    @csrf
                                     <fieldset>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                                <input class="from-control" type="text" id="name" name="name" placeholder="Nom" required="">
+                                                <input class="from-control" type="text" id="name" name="nom" placeholder="Nom" required=""
+                                                data-parsley-minlength="2" data-parsley-trigger="change">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                                <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                                <input class="from-control" type="email" id="email" name="email" placeholder="E-Mail" required=""
+                                                 data-parsley-trigger="change">
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                                <input class="from-control" type="text" id="phone" name="phone" placeholder="Numéro de téléphone" required="">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 mb-30">
+                                                <input class="from-control" type="text" id="phone" name="phone" placeholder="Numéro de téléphone" required=""
+                                                 data-parsley-trigger="change">
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 mb-30">
-                                                <input class="from-control" type="text" id="Website" name="subject" placeholder="Votre site web" required="">
-                                            </div>
-
                                             <div class="col-lg-12 mb-30">
-                                                <textarea class="from-control" id="message" name="message" placeholder="Votre message" required=""></textarea>
+                                                <textarea class="from-control" id="message" name="message" placeholder="Votre message" required=""
+                                                data-parsley-minlength="2" data-parsley-trigger="change"></textarea>
                                             </div>
                                         </div>
                                         <div class="btn-part">

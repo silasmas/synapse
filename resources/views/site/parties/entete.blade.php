@@ -35,6 +35,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"> <!-- This stylesheet dynamically changed from style.less -->
         <!-- responsive css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
-        
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/js/parsley/parsley.css') }}">
+        <link href="{{ asset('admin/js/sweetalert/sweetalert.css') }}" rel="stylesheet">
     </head>
     <body class="defult-home">
