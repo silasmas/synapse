@@ -24,7 +24,7 @@
                                             @forelse ($messages as $t)
                                                 <tr>
                                             <td class="client-avatar"><img alt="image" src="{{ asset('admin/img/default.png') }}"> </td>
-                                            <td><a data-toggle="tab" href="#{{$t->id.$t->nom }}" class="client-link">{{ $t->nom }}</a></td>
+                                            <td><a data-toggle="tab" href="#{{$t->id.$t->phone }}" class="client-link">{{ $t->nom }}</a></td>
                                             <td> {{ $t->phone }}</td>                                            
                                             <td> {{ $t->email }}</td>                                            
                                             <td class="client-status text-center"><span class="label label-primary">Date d'envoie :{{ \Carbon\Carbon::parse($t->created_at)->isoFormat('LLL')  }}</span></td>
@@ -52,7 +52,7 @@
                 <div class="ibox-content">
                     <div class="tab-content">
                         @forelse ($messages as $t)
-                        <div id="{{$t->id.$t->nom}}" class="tab-pane {{ $loop->first?"active":"" }}">
+                        <div id="{{$t->id.$t->phone}}" class="tab-pane {{ $loop->first?"active":"" }}">
                             <div class="row m-b-lg">
                                 <div class="col-lg-12 text-center">
                                     <h2>{{$t->nom}}</h2>
