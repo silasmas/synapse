@@ -6,6 +6,7 @@ use App\Models\contact;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
 use App\Models\newsletter;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,6 +36,11 @@ class ContactController extends Controller
     {
         $news = newsletter::get();
         return view("admin.pages.new", compact("news"));
+    }
+    public function users()
+    {
+        $users = User::get();
+        return view("admin.pages.users", compact("users"));
     }
 
     /**

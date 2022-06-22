@@ -107,7 +107,7 @@
                                 class="fa fa-envelope-open"></i>
                             <span class="nav-label">News letter</span></a>
                     </li>
-                    <li class="{{ $titre == 'user' ? 'active' : '' }}"> <a href="">
+                    <li class="{{ $titre == 'Utilisateurs' ? 'active' : '' }}"> <a href="{{ route('G_users') }}">
                             <i class="fa fa-user"></i>
                             <span class="nav-label">Utilisateurs</span></a>
                     </li>
