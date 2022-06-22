@@ -99,11 +99,15 @@
                         </ul>
                     </li>
 
-                    <li class="{{ $titre == 'news_letter' ? 'active' : '' }}"> <a href=""><i
+                    <li class="{{ $titre == 'Messages' ? 'active' : '' }}"> <a href="{{ route('G_message') }}"><i
+                                class="fa fa-envelope-open"></i>
+                            <span class="nav-label">Messages</span></a>
+                    </li>
+                    <li class="{{ $titre == 'news letter' ? 'active' : '' }}"> <a href="{{ route('G_neswsletter') }}"><i
                                 class="fa fa-envelope-open"></i>
                             <span class="nav-label">News letter</span></a>
                     </li>
-                    <li class="{{ $titre == 'news_letter' ? 'active' : '' }}"> <a href="">
+                    <li class="{{ $titre == 'user' ? 'active' : '' }}"> <a href="">
                             <i class="fa fa-user"></i>
                             <span class="nav-label">Utilisateurs</span></a>
                     </li>

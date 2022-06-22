@@ -26,9 +26,15 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function message()
     {
-        //
+        $messages = contact::get();
+        return view("admin.pages.message", compact("messages"));
+    }
+    public function news()
+    {
+        $news = newsletter::get();
+        return view("admin.pages.new", compact("news"));
     }
 
     /**
@@ -43,7 +49,7 @@ class ContactController extends Controller
             $request->all(),
             [
                 'nom' => ['required', 'string', 'max:255'],
-                'phone' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'string', 'max:255', 'unique:contacts'],
                 'message' => ['required', 'string'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:contacts'],
             ]

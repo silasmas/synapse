@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('G_branche', [BandeController::class, 'index'])->name('G_branche');
     Route::get('G_temoignage', [TemoignageController::class, 'index'])->name('G_temoignage');
     Route::get('G_partenaire', [PartenaireController::class, 'index'])->name('G_partenaire');
+    Route::get('G_message', [ContactController::class, 'message'])->name('G_message');
+    Route::get('G_neswsletter', [ContactController::class, 'news'])->name('G_neswsletter');
 
     Route::get('inserbranche', [BandeController::class, 'create'])->name('inserbranche');
     Route::get('inserservice', [serviceController::class, 'create'])->name('inserbande');
