@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalerieController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\TemoignageController;
@@ -22,10 +24,8 @@ use App\Http\Controllers\TemoignageController;
 Route::get('/', [BandeController::class, 'home'])->name('home');
 Route::post('sendmessage', [ContactController::class, 'store'])->name('sendmessage');
 Route::post('newsletter', [ContactController::class, 'newsletter'])->name('newsletter');
-Route::get('/admin', function () {
-    return view('auth.login');
-})->name('admin');
 
+Auth::routes(["verify" => true]);
 // Route::get('/dashboard', function () {
 //     return view('admin.pages.home');
 // })->middleware(['auth'])->name('dashboard');
@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('G_message', [ContactController::class, 'message'])->name('G_message');
     Route::get('G_neswsletter', [ContactController::class, 'news'])->name('G_neswsletter');
     Route::get('G_users', [ContactController::class, 'users'])->name('G_users');
+    Route::get('viewGalerie/{id}', [GalerieController::class, 'show'])->name('viewGalerie');
 
     Route::get('inserbranche', [BandeController::class, 'create'])->name('inserbranche');
     Route::get('inserservice', [serviceController::class, 'create'])->name('inserbande');
@@ -48,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('storeService', [ServiceController::class, 'store'])->name('storeService');
     Route::post('storepartenaire', [PartenaireController::class, 'store'])->name('storepartenaire');
     Route::post('storetemoignage', [TemoignageController::class, 'store'])->name('storetemoignage');
+    Route::post('storegalerie', [GalerieController::class, 'store'])->name('storegalerie');
 
 
     Route::get('detailBranche/{id}', [BandeController::class, 'show'])->name('detailBranche');
@@ -65,5 +67,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('deleteBranche/{id}', [BandeController::class, 'destroy'])->name('deleteBranche');
     Route::get('deleteTemoignage/{id}', [TemoignageController::class, 'destroy'])->name('deleteTemoignage');
     Route::get('deletePartenaire/{id}', [PartenaireController::class, 'destroy'])->name('deletePartenaire');
+    Route::get('deleteImg/{id}', [GalerieController::class, 'destroy'])->name('deleteImg');
 });
 require __DIR__ . '/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

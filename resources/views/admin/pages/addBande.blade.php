@@ -31,6 +31,11 @@
                                 <span class="label label-warning">Formulaire</span>
                             </a>
                         </li>
+                        <li class=""><a data-toggle="tab" href="#tab-galerie">
+                            Galerie du service
+                                <span class="label label-warning">Formulaire</span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane {{isset($service)?"":"active" }}" id="tab-branch">
@@ -153,8 +158,7 @@
                                                             <span class="input-group-addon btn btn-default btn-file"><span
                                                                     class="fileinput-new">Image</span>
                                                                 <span class="fileinput-exists">Changer</span><input
-                                                                    type="file" name="cover"  {{ isset($service)?"":"required"}}
-                                                                    ></span>
+                                                                    type="file" name="cover" ></span>
                                                             <a href="#"
                                                                 class="input-group-addon btn btn-default fileinput-exists"
                                                                 data-dismiss="fileinput">Supprimer</a>
@@ -174,6 +178,141 @@
                                                             <button class="ladda-button btn btn-sm btn-primary"
                                                                 id='ladda-session' data-style="expand-right"
                                                                 type="submit">{{ isset($service)?"Modifier":"Enregistrer"}}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-galerie">
+                            <div class="panel-body">
+                                <div class="ibox-title">
+                                    <h5>Ce formulaire vous permet d'enregistrer la galerie d'un service</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="sk-spinner sk-spinner-wandering-cubes">
+                                        <div class="sk-cube1"></div>
+                                        <div class="sk-cube2"></div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class=" col-lg-12 col-sm-12">
+                                            <form id="formFidel" method="POST" class="" action="{{route('storegalerie') }}"
+                                                class='form-group' data-parsley-validate enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row">
+                                                    <div>
+                                                        <input name="id" hidden value="" />
+                                                    </div>                                                  
+                                                    <div class="col-sm-6 form-group ">
+                                                        <label>Branches</label>
+                                                        <select class=" form-control" id="" required aria-required="true"
+                                                            class="validate" data-parsley-trigger="change"
+                                                            name="service_id">
+                                                            <option value="">Selectionnez un service
+                                                            </option>
+                                                           @forelse ($services as $b)
+                                                           <option value="{{ $b->id }}">{{ $b->serviceTitre }}</option>
+                                                           @empty
+                                                               
+                                                           @endforelse
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Image 1</label>
+                                                        <div class=" fileinput fileinput-new input-group"
+                                                            data-provides="fileinput">
+                                                            <div class="form-control" data-trigger="fileinput">
+                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                <span class="fileinput-filename"></span>
+                                                            </div>
+                                                            <span class="input-group-addon btn btn-default btn-file"><span
+                                                                    class="fileinput-new">Image</span>
+                                                                <span class="fileinput-exists">Changer</span><input
+                                                                    type="file" name="img1"  required></span>
+                                                            <a href="#"
+                                                                class="input-group-addon btn btn-default fileinput-exists"
+                                                                data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Image 2</label>
+                                                        <div class=" fileinput fileinput-new input-group"
+                                                            data-provides="fileinput">
+                                                            <div class="form-control" data-trigger="fileinput">
+                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                <span class="fileinput-filename"></span>
+                                                            </div>
+                                                            <span class="input-group-addon btn btn-default btn-file"><span
+                                                                    class="fileinput-new">Image</span>
+                                                                <span class="fileinput-exists">Changer</span><input
+                                                                    type="file" name="img2" ></span>
+                                                            <a href="#"
+                                                                class="input-group-addon btn btn-default fileinput-exists"
+                                                                data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Image 3</label>
+                                                        <div class=" fileinput fileinput-new input-group"
+                                                            data-provides="fileinput">
+                                                            <div class="form-control" data-trigger="fileinput">
+                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                <span class="fileinput-filename"></span>
+                                                            </div>
+                                                            <span class="input-group-addon btn btn-default btn-file"><span
+                                                                    class="fileinput-new">Image</span>
+                                                                <span class="fileinput-exists">Changer</span><input
+                                                                    type="file" name="img3" ></span>
+                                                            <a href="#"
+                                                                class="input-group-addon btn btn-default fileinput-exists"
+                                                                data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Image 4</label>
+                                                        <div class=" fileinput fileinput-new input-group"
+                                                            data-provides="fileinput">
+                                                            <div class="form-control" data-trigger="fileinput">
+                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                <span class="fileinput-filename"></span>
+                                                            </div>
+                                                            <span class="input-group-addon btn btn-default btn-file"><span
+                                                                    class="fileinput-new">Image</span>
+                                                                <span class="fileinput-exists">Changer</span><input
+                                                                    type="file" name="img4" ></span>
+                                                            <a href="#"
+                                                                class="input-group-addon btn btn-default fileinput-exists"
+                                                                data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                        <label>Image 5</label>
+                                                        <div class=" fileinput fileinput-new input-group"
+                                                            data-provides="fileinput">
+                                                            <div class="form-control" data-trigger="fileinput">
+                                                                <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                                <span class="fileinput-filename"></span>
+                                                            </div>
+                                                            <span class="input-group-addon btn btn-default btn-file"><span
+                                                                    class="fileinput-new">Image</span>
+                                                                <span class="fileinput-exists">Changer</span><input
+                                                                    type="file" name="img5" ></span>
+                                                            <a href="#"
+                                                                class="input-group-addon btn btn-default fileinput-exists"
+                                                                data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-lg-offset-3 col-lg-6 col-sm-12 form-group">
+
+                                                        <div class="col-sm-offset-4 col-sm-5">
+
+                                                            <button class="ladda-button btn btn-sm btn-primary"
+                                                                id='ladda-session' data-style="expand-right"
+                                                                type="submit">Enregistrer</button>
                                                         </div>
                                                     </div>
                                                 </div>

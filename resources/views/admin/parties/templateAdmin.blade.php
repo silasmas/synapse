@@ -99,17 +99,23 @@
                         </ul>
                     </li>
 
-                    <li class="{{ $titre == 'Messages' ? 'active' : '' }}"> <a href="{{ route('G_message') }}"><i
+                    <li class="{{ $titre == 'Messages' ? 'active' : '' }}"> 
+                        <a href="{{ route('G_message') }}"><i
                                 class="fa fa-envelope-open"></i>
-                            <span class="nav-label">Messages</span></a>
+                            <span class="nav-label">Messages</span>
+                            <span class="pull-right label label-danger">{{ $nbrmessage->count() }}</span></a>
                     </li>
-                    <li class="{{ $titre == 'news letter' ? 'active' : '' }}"> <a href="{{ route('G_neswsletter') }}"><i
+                    <li class="{{ $titre == 'news letter' ? 'active' : '' }}"> 
+                        <a href="{{ route('G_neswsletter') }}"><i
                                 class="fa fa-envelope-open"></i>
-                            <span class="nav-label">News letter</span></a>
+                            <span class="nav-label">News letter</span>
+                            <span class="pull-right label label-danger">{{ $nbrnews->count() }}</span></a>
                     </li>
-                    <li class="{{ $titre == 'Utilisateurs' ? 'active' : '' }}"> <a href="{{ route('G_users') }}">
+                    <li class="{{ $titre == 'Utilisateurs' ? 'active' : '' }}"> 
+                        <a href="{{ route('G_users') }}">
                             <i class="fa fa-user"></i>
-                            <span class="nav-label">Utilisateurs</span></a>
+                            <span class="nav-label">Utilisateurs</span>
+                            <span class="pull-right label label-danger">{{ $nbruser->count() }}</span></a>
                     </li>
                 </ul>
 

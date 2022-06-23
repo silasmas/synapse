@@ -10,9 +10,13 @@ class service extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $with = ["branche"];
+    protected $with = ["branche", "galerie"];
     public function branche()
     {
         return $this->belongsTo(bande::class);
+    }
+    public function galerie()
+    {
+        return $this->hasMany(galerie::class);
     }
 }

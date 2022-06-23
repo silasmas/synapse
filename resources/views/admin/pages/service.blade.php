@@ -43,6 +43,9 @@
                           
                         </div>
                         <div class="m-t text-righ">
+                            <a href="{{ route('viewGalerie', ['id'=>$b->id]) }}" 
+                                class="btn btn-xs btn-outline btn-warning">Voir la galerie 
+                                <i class="fa fa-folder"></i> </a>
                             <a href="{{ route('editService', ['id'=>$b->id]) }}" 
                                 class="btn btn-xs btn-outline btn-primary">Modifier 
                                 <i class="fa fa-edit"></i> </a>
@@ -55,7 +58,7 @@
             </div>
         </div>
         @empty
-            
+            <h2 class="text-danger text-center">Cette branche n'a pas encore des services enregistrer</h2>
         @endforelse
     </div>
 </div>

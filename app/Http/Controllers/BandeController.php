@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Validator;
 
 class BandeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,16 +25,12 @@ class BandeController extends Controller
      */
     public function index()
     {
-        $branches = bande::get();
-        return view("admin.pages.home", compact('branches'));
+        return view("admin.pages.home");
     }
 
     public function home()
     {
-        $branches = bande::get();
-        $temoignages = temoignage::get();
-        $partenaires = partenaire::get();
-        return view('site.pages.index', compact("branches", "temoignages", "partenaires"));
+        return view('site.pages.index');
     }
     /**
      * Show the form for creating a new resource.
@@ -83,8 +84,7 @@ class BandeController extends Controller
     public function show($id)
     {
         $detail = bande::where("id", $id)->first();
-        $branches = bande::get();
-        return view('admin.pages.service', compact("detail", "branches"));
+        return view('admin.pages.service', compact("detail"));
     }
 
     /**
@@ -96,9 +96,7 @@ class BandeController extends Controller
     public function edit($id)
     {
         $branche = bande::find($id);
-        $branches = bande::get();
-        //dd($service);
-        return view("admin.pages.addBande", compact("branche", "branches"));
+        return view("admin.pages.addBande", compact("branche"));
     }
 
     /**
