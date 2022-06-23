@@ -21,7 +21,7 @@ use App\Http\Controllers\TemoignageController;
 */
 
 
-Route::get('/', [BandeController::class, 'home'])->name('home');
+Route::get('/', [ContactController::class, 'index'])->name('home');
 Route::post('sendmessage', [ContactController::class, 'store'])->name('sendmessage');
 Route::post('newsletter', [ContactController::class, 'newsletter'])->name('newsletter');
 
