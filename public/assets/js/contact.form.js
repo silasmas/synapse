@@ -14,6 +14,7 @@
 	'use strict';
 	// Get the form.
 	var form = $('#contact-form');
+	var btn = document.querySelector('#btnmsg');
 
 	// Get the messages div.
 	var formMessages = $('#form-messages');
@@ -22,6 +23,8 @@
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
+		btn.setAttribute('disabled', 'true');
+		btn.innerHTML ="En cour d'envoi";
 		// Serialize the form data.
 		var formData = $(form).serialize();
 
@@ -32,6 +35,8 @@
 			data: formData
 		})
 			.done(function(response) {
+				btn.removeAttribute('disabled');
+				btn.innerHTML ='Envoyer';
 				if (response.reponse) {
 					// Make sure that the formMessages div has the 'success' class.
 					$(formMessages).removeClass('error');
@@ -43,7 +48,7 @@
 					// Set the message text.
 					$(formMessages).text(response.msg);
 					// Clear the form.
-                    $(form)[0].reset();
+					$(form)[0].reset();
 					// $('#nom, #email, #phone_number, #message').val('');
 				} else {
 					swal({
@@ -53,6 +58,8 @@
 				}
 			})
 			.fail(function(data) {
+				btn.removeAttribute('disabled');
+				btn.innerHTML ='Envoyer';
 				// Make sure that the formMessages div has the 'error' class.
 				$(formMessages).removeClass('success');
 				$(formMessages).addClass('error');
@@ -72,7 +79,6 @@
 	// Get the form.
 	var form = $('#newsletter');
 
-	
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
@@ -93,7 +99,7 @@
 						icon: 'success'
 					});
 					// Clear the form.
-                    $(form)[0].reset();
+					$(form)[0].reset();
 					// $('#nom, #email, #phone_number, #message').val('');
 				} else {
 					swal({
@@ -112,7 +118,7 @@
 				} else {
 					swal({
 						title: response.msg,
-						icon:"Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
+						icon: "Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
 					});
 				}
 			});
@@ -124,14 +130,13 @@
 	// Get the form.
 	var form = $('#addUser');
 
-	
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 		// Serialize the form data.
 		var formData = $(form).serialize();
-		load("#tab-adduser");
+		load('#tab-adduser');
 		// Submit the form using AJAX.
 		$.ajax({
 			type: 'POST',
@@ -139,14 +144,14 @@
 			data: formData
 		})
 			.done(function(response) {
-				load("#tab-adduser");
+				load('#tab-adduser');
 				if (response.reponse) {
 					swal({
 						title: response.msg,
 						icon: 'success'
 					});
 					// Clear the form.
-                    $(form)[0].reset();
+					$(form)[0].reset();
 					location.reload();
 				} else {
 					swal({
@@ -156,7 +161,7 @@
 				}
 			})
 			.fail(function(data) {
-				load("#tab-adduser");
+				load('#tab-adduser');
 				// Set the message text.
 				if (data.responseText !== '') {
 					swal({
@@ -166,7 +171,7 @@
 				} else {
 					swal({
 						title: response.msg,
-						icon:"Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
+						icon: "Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
 					});
 				}
 			});
@@ -176,15 +181,14 @@
 	'use strict';
 	// Get the form.
 	var form = $('#updatUser');
-	
-	
+
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 		// Serialize the form data.
 		var formData = $(form).serialize();
-		load("#tab-user");
+		load('#tab-user');
 		// Submit the form using AJAX.
 		$.ajax({
 			type: 'POST',
@@ -192,14 +196,14 @@
 			data: formData
 		})
 			.done(function(response) {
-				load("#tab-user");
+				load('#tab-user');
 				if (response.reponse) {
 					swal({
 						title: response.msg,
 						icon: 'success'
 					});
 					// Clear the form.
-                    $(form)[0].reset();
+					$(form)[0].reset();
 					//location.reload();
 				} else {
 					swal({
@@ -209,7 +213,7 @@
 				}
 			})
 			.fail(function(data) {
-				load("#tab-user");
+				load('#tab-user');
 				// Set the message text.
 				if (data.responseText !== '') {
 					swal({
@@ -219,7 +223,7 @@
 				} else {
 					swal({
 						title: response.msg,
-						icon:"Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
+						icon: "Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
 					});
 				}
 			});

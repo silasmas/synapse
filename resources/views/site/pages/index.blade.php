@@ -368,7 +368,8 @@
             <!-- Testimonial Section End -->
 
             <!-- Contact Section Start -->
-            <div id="rs-contact" class="rs-contact contact-style2 bg11 pt-95 pb-100 md-pt-65 md-pb-70">
+            <div id="rs-contact" class="rs-contact contact-style2 bg11 pt-95 pb-100 md-pt-65 md-pb-70"
+            style="background: url('{{ asset("assets/images/bg/contact-bg-2.jpg") }}')">
                 <div class="container">
                     <div class="sec-title2 mb-55 md-mb-35 text-center text-lg-start">
                         <div class="sub-text">Contact</div>
@@ -407,7 +408,9 @@
                                         </div>
                                         <div class="btn-part">
                                             <div class="form-group mb-0">
-                                                <input class="readon submit" type="submit" value="Envoyer">
+                                                <button class="readon submit" id="btnmsg" type="submit" >
+                                                    Envoyer
+                                                </button>
                                             </div>
                                         </div>
                                     </fieldset>
