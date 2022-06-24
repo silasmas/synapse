@@ -31,6 +31,13 @@ class UserObserver
         if ($user->wasChanged('email')) {
             Mail::to($user->email)->send(new usermail($user, "Verification de l'adresse mail modifier"));
         }
+        if ($user->wasChanged('notifiable')) {
+            if ($user->notifiable == 'oui') {
+                Mail::to($user->email)->send(new usermail($user, "Ajout dans la liste des notifiable modifier"));
+            } else {
+                Mail::to($user->email)->send(new usermail($user, "Soustrait dans la liste des notifiable modifier"));
+            }
+        }
         if ($user->wasChanged('email_verified_at ')) {
             Mail::to($user->email)->send(new usermail($user, "Verification de l'adresse mail réussi"));
         }

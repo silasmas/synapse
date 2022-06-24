@@ -61,6 +61,7 @@ Route::middleware(['auth', "verified"])->group(function () {
     Route::get('editBrance/{id}', [BandeController::class, 'edit'])->name('editBrance');
     Route::get('editTemoignage/{id}', [TemoignageController::class, 'edit'])->name('editTemoignage');
     Route::get('editPartenaire/{id}', [PartenaireController::class, 'edit'])->name('editPartenaire');
+    Route::get('editUser/{id}', [ContactController::class, 'edit'])->name('editUser');
 
     Route::post('updateService', [ServiceController::class, 'update'])->name('updateService');
     Route::post('updateBranche', [BandeController::class, 'update'])->name('updateBranche');

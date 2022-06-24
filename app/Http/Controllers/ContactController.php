@@ -210,9 +210,11 @@ class ContactController extends Controller
      * @param  \App\Models\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(contact $contact)
+    public function edit($id)
     {
-        //
+        $users = User::get();
+        $userEdit = User::find($id);
+        return view("admin.pages.users", compact("userEdit", "users"));
     }
 
     /**
@@ -224,20 +226,30 @@ class ContactController extends Controller
      */
     public function update(Request $request)
     {
+
         if ($request->id != "") {
             $line = User::findOrFail($request->id);
             if ($line) {
                 $request->name == "" ? $line->name = $line->name : $line->name = $request->name;
                 $request->email == "" ? $line->email = $line->email : $line->email = $request->email;
                 $request->notifiable == "" ? $line->notifiable = $line->notifiable : $line->notifiable = $request->notifiable;
-                $request->password == "" ? $line->password = $line->password : $line->password = $request->password;
+                $request->password == "" ? $line->password = $line->password : $line->password = Hash::make($request->password);
                 $line->save();
-                return back()->with(['message' => 'Utilisateur mis à jour', "type" => "success"]);
+                return response()->json([
+                    'reponse' => true,
+                    'msg' => 'Utilisateur mis à jour',
+                ]);
             } else {
-                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+                return response()->json([
+                    'reponse' => false,
+                    'msg' => 'Merci de vérifier le formulaire!',
+                ]);
             }
         } else {
-            return back()->with(['message' => 'Erreur de mise à jour!', "type" => "danger"]);
+            return response()->json([
+                'reponse' => false,
+                'msg' => 'Erreur de mise à jour!',
+            ]);
         }
     }
 
