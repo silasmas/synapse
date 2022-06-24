@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\contact;
+use App\Models\newsletter;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
-use App\Models\newsletter;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Models\bande;
+use App\Models\service;
 
 class ContactController extends Controller
 {
@@ -21,9 +25,14 @@ class ContactController extends Controller
     {
         return view('site.pages.index');
     }
+    public function allbranches()
+    {
+        $allbranches = bande::get();
+        return view('site.pages.allBranches', compact("allbranches"));
+    }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource. 
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,6 +51,17 @@ class ContactController extends Controller
         $users = User::get();
         return view("admin.pages.users", compact("users"));
     }
+    public function detailBranche($id)
+    {
+        $oneBranche = bande::find($id);
+        return view("site.pages.detailservice", compact("oneBranche"));
+    }
+    public function oneservice($id)
+    {
+        $oneservice = service::with("branche")->where("id", $id)->first();
+        //dd($oneservice);
+        return view("site.pages.oneService", compact("oneservice"));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -55,9 +75,9 @@ class ContactController extends Controller
             $request->all(),
             [
                 'nom' => ['required', 'string', 'max:255'],
-                'phone' => ['required', 'string', 'max:255', 'unique:contacts'],
+                'phone' => ['required', 'string', 'max:255'],
                 'message' => ['required', 'string'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:contacts'],
+                'email' => ['required', 'string', 'email', 'max:255'],
             ]
         );
         if ($re->passes()) {
@@ -131,6 +151,47 @@ class ContactController extends Controller
             );
         }
     }
+    public function adduser(Request $request)
+    {
+        $re =   Validator::make(
+            $request->all(),
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]
+        );
+        if ($re->passes()) {
+            $rep = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'notifiable' => $request->notifiable,
+                'password' => Hash::make($request->password),
+            ]);
+            if ($rep) {
+                return response()->json(
+                    [
+                        'reponse' => true,
+                        'msg' => 'Utilisateur enregistrer avec succès',
+                    ]
+                );
+            } else {
+                return response()->json(
+                    [
+                        'reponse' => false,
+                        'msg' => 'Erreur',
+                    ]
+                );
+            }
+        } else {
+            return response()->json(
+                [
+                    'reponse' => false,
+                    'msg' => $re->errors()->first(),
+                ]
+            );
+        }
+    }
 
     /**
      * Display the specified resource.
@@ -161,9 +222,23 @@ class ContactController extends Controller
      * @param  \App\Models\contact                     $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecontactRequest $request, contact $contact)
+    public function update(Request $request)
     {
-        //
+        if ($request->id != "") {
+            $line = User::findOrFail($request->id);
+            if ($line) {
+                $request->name == "" ? $line->name = $line->name : $line->name = $request->name;
+                $request->email == "" ? $line->email = $line->email : $line->email = $request->email;
+                $request->notifiable == "" ? $line->notifiable = $line->notifiable : $line->notifiable = $request->notifiable;
+                $request->password == "" ? $line->password = $line->password : $line->password = $request->password;
+                $line->save();
+                return back()->with(['message' => 'Utilisateur mis à jour', "type" => "success"]);
+            } else {
+                return back()->with(['message' => 'Merci de vérifier le formulaire!', "type" => "danger"]);
+            }
+        } else {
+            return back()->with(['message' => 'Erreur de mise à jour!', "type" => "danger"]);
+        }
     }
 
     /**
@@ -172,8 +247,29 @@ class ContactController extends Controller
      * @param  \App\Models\contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contact $contact)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        if ($user) {
+            if ($user->email == Auth::user()->email) {
+                return response()->json([
+                    'reponse' => false,
+                    'msg' => 'Impossible de supprimer cet utilisateur car il est actuellement connecté',
+                ]);
+            } else {
+                $rep = $user->delete();
+                if ($user) {
+                    return response()->json([
+                        'reponse' => true,
+                        'msg' => 'Suppression Réussie',
+                    ]);
+                } else {
+                    return response()->json([
+                        'reponse' => false,
+                        'msg' => 'Erreur',
+                    ]);
+                }
+            }
+        }
     }
 }

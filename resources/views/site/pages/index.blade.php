@@ -164,8 +164,8 @@
                                 <img src="{{ asset('storage/'.$b->image) }}" alt="" height="260" width="360" style="height: 260px !important;width: 360px !important">
                             </div>
                             <div class="content-part">
-                                <h3 class="title"><a href="business-planning.html">{{ $b->titre }}</a></h3>
-                                <div class="desc"> {!! Str::limit(strip_tags($b->description) , 50, '...') !!}</div>
+                                <h3 class="title"><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></h3>
+                                <div class="desc"> {!! Str::limit(strip_tags($b->description) , 200, '...') !!}</div>
                                 <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                         @endforelse
                       
                     </div>
-                    <a class="readon consultant discover mt-4" href="portfolio.html">Plus de branche</a>
+                    <a class="readon consultant discover mt-4" href="{{ route('allbranches') }}">Toutes les branches</a>
                 </div>
             </div>
             <!-- Process Section Start -->

@@ -1,12 +1,12 @@
 @extends('admin.parties.templateAdmin', ['titre' => 'Ajout branche & service'])
 
-@section('autres_style')
-    <link href="{{ asset('admin/css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2/select2.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/js/parsley/parsley.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-markdown/bootstrap-markdown.min.css') }}">
-   
-@endsection
+    @section('autres_style')
+        <link href="{{ asset('admin/css/jasny/jasny-bootstrap.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2/select2.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/js/parsley/parsley.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-markdown/bootstrap-markdown.min.css') }}">
+    
+    @endsection
 @section('content')
     <div class="wrapper wrapper-content animated fadeIn">
         <div class="row m-t-lg">

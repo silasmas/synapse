@@ -2,7 +2,10 @@
 
 namespace App\Observers;
 
+use App\Mail\notification;
 use App\Models\newsletter;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class newsletterObserver
 {
@@ -16,7 +19,6 @@ class newsletterObserver
      */
     public function created(newsletter $newsletter)
     {
-        //
     }
 
     /**

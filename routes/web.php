@@ -22,6 +22,9 @@ use App\Http\Controllers\TemoignageController;
 
 
 Route::get('/', [ContactController::class, 'index'])->name('home');
+Route::get('allbranches', [ContactController::class, 'allbranches'])->name('allbranches');
+Route::get('detailBranches/{id}', [ContactController::class, 'detailBranche'])->name('detailBranches');
+Route::get('oneservice/{id}', [ContactController::class, 'oneservice'])->name('oneservice');
 Route::post('sendmessage', [ContactController::class, 'store'])->name('sendmessage');
 Route::post('newsletter', [ContactController::class, 'newsletter'])->name('newsletter');
 
@@ -30,7 +33,7 @@ Auth::routes(["verify" => true]);
 //     return view('admin.pages.home');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', "verified"])->group(function () {
     Route::get('dashboard', [BandeController::class, 'index'])->name('dashboard');
     // Route::get('G_branche', [BandeController::class, 'index'])->name('G_branche');
     Route::get('G_temoignage', [TemoignageController::class, 'index'])->name('G_temoignage');
@@ -50,6 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('storepartenaire', [PartenaireController::class, 'store'])->name('storepartenaire');
     Route::post('storetemoignage', [TemoignageController::class, 'store'])->name('storetemoignage');
     Route::post('storegalerie', [GalerieController::class, 'store'])->name('storegalerie');
+    Route::post('adduser', [ContactController::class, 'adduser'])->name('adduser');
 
 
     Route::get('detailBranche/{id}', [BandeController::class, 'show'])->name('detailBranche');
@@ -62,12 +66,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('updateBranche', [BandeController::class, 'update'])->name('updateBranche');
     Route::post('updateTemoignage', [TemoignageController::class, 'update'])->name('updateTemoignage');
     Route::post('updatePartenaire', [PartenaireController::class, 'update'])->name('updatePartenaire');
+    Route::post('updateUser', [ContactController::class, 'update'])->name('updateUser');
 
     Route::get('deleteService/{id}', [ServiceController::class, 'destroy'])->name('deleteService');
     Route::get('deleteBranche/{id}', [BandeController::class, 'destroy'])->name('deleteBranche');
     Route::get('deleteTemoignage/{id}', [TemoignageController::class, 'destroy'])->name('deleteTemoignage');
     Route::get('deletePartenaire/{id}', [PartenaireController::class, 'destroy'])->name('deletePartenaire');
     Route::get('deleteImg/{id}', [GalerieController::class, 'destroy'])->name('deleteImg');
+    Route::get('deleteUser/{id}', [ContactController::class, 'destroy'])->name('deleteUser');
 });
 require __DIR__ . '/auth.php';
 

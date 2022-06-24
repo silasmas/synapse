@@ -61,7 +61,7 @@
                 <div class="row-table">
                     <div class="col-cell header-logo">
                         <div class="logo-area">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                                 <div class="brand">
                                     <span class="text-danger">Groupe</span>
@@ -121,7 +121,7 @@
                 </a>
             </div>
             <div class="canvas-logo">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                     <div class="brand">
                         <span>Groupe</span>

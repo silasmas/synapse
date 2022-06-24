@@ -192,6 +192,9 @@
     @yield('autres-script')
 
     <script>
+        function load(id) {
+	$(id).children('.ibox-content').toggleClass('sk-loading');
+}
         function supprimer(url, id) {
             // alert(url)
             swal({
@@ -205,13 +208,13 @@
                 }
             }).then(function(willDelete) {
                 if (willDelete) {
-
+                    load("#tab-user");
                     $.ajax({
                         url: url + "/" + id,
                         method: "GET",
                         data: "",
                         success: function(data) {
-                            //  load('#tab-session');
+                            load("#tab-user");
                             if (!data.reponse) {
                                 swal({
                                     title: data.msg,
