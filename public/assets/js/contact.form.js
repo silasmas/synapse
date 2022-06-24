@@ -78,7 +78,7 @@
 	'use strict';
 	// Get the form.
 	var form = $('#newsletter');
-
+	var btn = document.querySelector('#btnNews');
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
@@ -86,6 +86,8 @@
 		// Serialize the form data.
 		var formData = $(form).serialize();
 
+		btn.setAttribute('disabled', 'true');
+		btn.value="En cour d'envoi";
 		// Submit the form using AJAX.
 		$.ajax({
 			type: 'POST',
@@ -93,6 +95,8 @@
 			data: formData
 		})
 			.done(function(response) {
+				btn.removeAttribute('disabled');
+				btn.value='Envoyer';
 				if (response.reponse) {
 					swal({
 						title: response.msg,
@@ -109,6 +113,8 @@
 				}
 			})
 			.fail(function(data) {
+				btn.removeAttribute('disabled');
+				btn.value='Envoyer';
 				// Set the message text.
 				if (data.responseText !== '') {
 					swal({

@@ -85,7 +85,7 @@
                           @csrf
                           <p>
                           <input type="email" name="email" placeholder="Votre adresse mail" required="" data-parsley-trigger="change">
-                          <input type="submit" value="S'abonner">
+                          <input type="submit" value="S'abonner" id="btnNews">
                         </p>
                       </form>
                   </div>
