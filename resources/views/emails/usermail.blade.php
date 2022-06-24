@@ -15,6 +15,12 @@
 @if ($objet=="Verification de l'adresse mail réussi")
   Votre adresse mail a bien été vérifier
 @endif
+@if ($objet=="Ajout dans la liste des notifiable modifier")
+  Vous êtes ajouter dans la liste des notifiable en cas d'un message envoyer par un visiteur sur le site <b>Groupe synapse</b> 
+@endif
+@if ($objet=="Soustrait dans la liste des notifiable modifier")
+Vous êtes soustrait dans la liste des notifiable en cas d'un message envoyer par un visiteur sur le site <b>Groupe synapse</b> 
+@endif
 @endcomponent
 
 @component('mail::button', ['url' => config('app.url')."/login"])
