@@ -131,58 +131,6 @@
 	});
 })(jQuery);
 
-// (function($) {
-// 	'use strict';
-// 	// Get the form.
-// 	var form = $('#addUser');
-
-// 	// Set up an event listener for the contact form.
-// 	$(form).submit(function(e) {
-// 		// Stop the browser from submitting the form.
-// 		e.preventDefault();
-// 		// Serialize the form data.
-// 		var formData = $(form).serialize();
-// 		load('#tab-adduser');
-// 		// Submit the form using AJAX.
-// 		$.ajax({
-// 			type: 'POST',
-// 			url: $(form).attr('action'),
-// 			data: formData
-// 		})
-// 			.done(function(response) {
-// 				load('#tab-adduser');
-// 				if (response.reponse) {
-// 					swal({
-// 						title: response.msg,
-// 						icon: 'success'
-// 					});
-// 					// Clear the form.
-// 					$(form)[0].reset();
-// 					location.reload();
-// 				} else {
-// 					swal({
-// 						title: response.msg,
-// 						icon: 'error'
-// 					});
-// 				}
-// 			})
-// 			.fail(function(data) {
-// 				load('#tab-adduser');
-// 				// Set the message text.
-// 				if (data.responseText !== '') {
-// 					swal({
-// 						title: response.msg,
-// 						icon: 'error'
-// 					});
-// 				} else {
-// 					swal({
-// 						title: response.msg,
-// 						icon: "Oops! Une erreur s'est produite et votre message n'a pas pu être envoyé."
-// 					});
-// 				}
-// 			});
-// 	});
-// })(jQuery);
 
 (function($) {
 	'use strict';
@@ -213,8 +161,7 @@
 						icon: 'success'
 					});
 					// Clear the form.
-					$(form)[0].reset();
-					//location.reload();
+					location.reload();
 				} else {
 					swal({
 						title: response.msg,

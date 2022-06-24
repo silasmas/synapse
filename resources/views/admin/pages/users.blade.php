@@ -32,13 +32,7 @@
                                 <div id="tab-1" class="tab-pane active ">
                                     <div class="full-height-scroll">
                                         <div class="ibox-content">
-                                            <div class="sk-spinner sk-spinner-wave">
-                                                <div class="sk-rect1"></div>
-                                                <div class="sk-rect2"></div>
-                                                <div class="sk-rect3"></div>
-                                                <div class="sk-rect4"></div>
-                                                <div class="sk-rect5"></div>
-                                            </div>
+                                            
                                             <div class='row'>
                                                 <div class=" col-lg-12 col-sm-12">
                                                     <form method="POST" class="" {{ !isset($userEdit)?'onsubmit="addUser(this)"':'' }}
