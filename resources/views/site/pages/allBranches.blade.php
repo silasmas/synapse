@@ -14,13 +14,13 @@
                     </div>
                     <div class="content-part">
                         <h3 class="title"><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></h3>
-                        <div class="desc"> {!! Str::limit(strip_tags($b->description) , 500, '...') !!}</div>
+                        <div class="desc"> {!!$b->description !!}</div>
                         <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                     </div>
                 </div>
             </div>
             @empty
-                
+            <h3 class="text-danger text-center">Pas des branches</h3>  
             @endforelse
           
             
