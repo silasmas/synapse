@@ -105,7 +105,7 @@ class ServiceController extends Controller
                 $file == '' ? '' : ($filenameImg = 'services/' . time() . '.' . $file->getClientOriginalName());
                 $file == '' ? '' : $file->move('storage/services', $filenameImg);
 
-                $request->bande_id == "" ? $line->bande_id = $line->bande_id : $line->bande_id = $request->id;
+                $request->bande_id == "" ? $line->bande_id = $line->bande_id : $line->bande_id = $request->bande_id;
                 $request->serviceTitre == "" ? $line->serviceTitre = $line->serviceTitre : $line->serviceTitre = $request->serviceTitre;
                 $request->description == "" ? $line->description = $line->description : $line->description = $request->description;
                 $request->cover == "" ? $line->cover = $line->cover : $line->cover = $filenameImg;
