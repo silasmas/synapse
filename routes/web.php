@@ -33,7 +33,7 @@ Auth::routes(["verify" => true]);
 //     return view('admin.pages.home');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::middleware(['auth', "verified"])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [BandeController::class, 'index'])->name('dashboard');
     // Route::get('G_branche', [BandeController::class, 'index'])->name('G_branche');
     Route::get('G_temoignage', [TemoignageController::class, 'index'])->name('G_temoignage');
