@@ -269,13 +269,13 @@
                                 <img src="{{ asset('assets/images/contact/icons/1.png') }}" alt="images">
                             </div>
                             <div class="content-text">
-                                <h2 class="title"><a href="#">Nos bureaus</a></h2>
+                                <h2 class="title"><a href="#">Notre succursale </a></h2>
                                 <p class="services-txt">55 Gerad Lane,<br>
                                     NY 11201, USA</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 md-mb-30">
+                    {{-- <div class="col-lg-3 col-md-6 col-sm-6 md-mb-30">
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <img src="{{ asset('assets/images/contact/icons/2.png') }}" alt="images">
@@ -309,7 +309,7 @@
                                 <a href="tel:(+088)222-9999">(+088) 222-9999</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

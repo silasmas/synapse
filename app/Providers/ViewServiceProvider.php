@@ -35,6 +35,10 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        View::composer('*', function ($view) {
+            $branches = bande::get();           
+            $view->with('branches', $branches);
+        });
         View::composer('admin.pages.*', function ($view) {
             $branches = bande::get();
             $service = service::get();

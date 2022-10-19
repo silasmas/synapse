@@ -1,8 +1,6 @@
 @extends("bienvenu")
 
 @section("content")
-
-
             <!-- Slider Start -->
             <div id="rs-slider" class="rs-slider slider3">
                 <div class="bend niceties">
@@ -15,16 +13,16 @@
                         <div class="content-part">
                             <div class="container">
                                 <div class="slider-des">
-                                    <div class="sl-subtitle">Sustainable Finance</div>
+                                    <div class="sl-subtitle"> Découvrez votre entreprise</div>
                                     <h1 class="sl-title">La solution à<br>votre portée</h1>
                                 </div>
                                 <div class="desc">
-                                    Ceux qui sont avides de répondre à vos besoins dans 
-                                    le souci de vous apporter satisfaction avec plus de 
+                                    Ceux qui sont avides de répondre à vos besoins dans
+                                    le souci de vous apporter satisfaction avec plus de
                                     10 ans d'expérience de travail acharné.
                                 </div>
                                 <div class="slider-bottom ">
-                                    <a class="readon consultant slider" href="contact.html">Discover More</a>
+                                    <a class="readon consultant slider" href="#rs-services">Nos Branches</a>
                                 </div>
                             </div>
                         </div>
@@ -34,16 +32,16 @@
                         <div class="content-part">
                             <div class="container">
                                 <div class="slider-des">
-                                    <div class="sl-subtitle">Discover your business</div>
+                                    <div class="sl-subtitle">Découvrez votre entreprise</div>
                                     <h1 class="sl-title">La solution à<br>votre portée</h1>
                                 </div>
                                 <div class="desc">
-                                    Ceux qui sont avides de répondre à vos besoins dans 
+                                    Ceux qui sont avides de répondre à vos besoins dans
                                     le souci de vous apporter satisfaction avec plus de
                                      10 ans d'expérience de travail acharné.
                                 </div>
                                 <div class="slider-bottom ">
-                                    <a class="readon consultant" href="contact.html">Discover More</a>
+                                    <a class="readon consultant slider" href="#rs-services">Nos Branches</a>
                                 </div>
                             </div>
                         </div>
@@ -58,20 +56,25 @@
                     <div class="row y-middle">
                         <div class="col-lg-6 pr-70 md-pr-15 md-mb-50">
                            <div class="sec-title2 mb-30">
-                                <div class="sub-text">Qui sommes nous</div>
-                                <h4 class="title mb-23">Nous sommes une Entreprise des services sur <span>plusieurs domaines d'activités,
-                                    avec un objectif principal de satisfaire la clientèle au travers l’optimisation des résultats.</span></h4>
+                                <div class="sub-text">Qui sommes nous ?</div>
+                                <h4 class="title mb-23">
+                                    Nous sommes une Entreprise des services <span>sur plusieurs
+                                    domaines d'activités.</span></h4>
+                                    <p class="desc mb-0">
+                                        Notre objectif principal est de
+                                        satisfaire la clientèle au travers l’optimisation des
+                                        résultats.
+                                    </p>
                                 <p class="desc mb-0">
-                                    Nous œuvrons dans les domaines des solutions 
-                                    TIC (Technologies de l’Information et Communication) 
-                                    globales; de l'achat, l'importation, l'exportation,
-                                     la commercialisation, la représentation commerciale;
-                                      de L’Elevage et l’Agriculture ; de la commercialisation, 
-                                      la représentation commerciale et la distribution des produits des autres sociétés.
+                                    Depuis 2010, nous œuvrons dans les domaines des solutions TIC
+                                    (Technologies de l’Information et Communication) globales; de
+                                    l'achat, de l'importation, de l'exportation, de la commercialisation,
+                                    de la représentation commerciale; de L’Elevage et de l’Agriculture ;
+                                    de l’Aviculture, de la distribution des produits des autres sociétés.
                                 </p>
                            </div>
                             <!-- Skillbar Section Start -->
-                            <div class="rs-skillbar style1">
+                            {{-- <div class="rs-skillbar style1">
                                 <div class="cl-skill-bar">
                                    <!-- Start Skill Bar -->
                                    <span class="skillbar-title">Business Consulting</span>
@@ -91,7 +94,7 @@
                                         <a class="readon consultant discover" href="about.html">Discover More</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Skillbar Section End -->
                         </div>
                         <div class="col-lg-6">
@@ -122,10 +125,10 @@
                         </div>
                         <div class="last-half">
                             <p class="desc mb-0 pl-20 md-pl-15">
-                                Plus de 10 ans d'expérience dans le conseil en affaires 
-                                et en finance, Solutions informatiques, en importation 
-                                des biens et marchandises, en dédouanement et logistique, 
-                                et collaboration avec plus de 1 000 clients dans le monde, 
+                                Plus de 10 ans d'expérience dans le conseil en affaires
+                                et en gestion de vos comptes bancaires, Solutions informatiques, en importation
+                                des biens et marchandises, en dédouanement et logistique,
+                                et collaboration avec plus de 1 000 clients dans le monde,
                                 réalisation des projets dans les domaines de l’Agriculture – Elevage – Aviculture.</p>
                         </div>
                     </div>
@@ -166,13 +169,13 @@
                             <div class="content-part">
                                 <h3 class="title"><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></h3>
                                 <div class="desc"> {!! Str::limit(strip_tags($b->description) , 200, '...') !!}</div>
-                                <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
+                                <a href="{{ route('detailBranches', ['id'=>$b->id]) }}" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                             </div>
                         </div>
                         @empty
                             <h3 class="text-danger">Pas des branches disponible</h3>
                         @endforelse
-                      
+
                     </div>
                     <a class="readon consultant discover mt-4" href="{{ route('allbranches') }}">Toutes les branches</a>
                 </div>
@@ -320,8 +323,8 @@
                     @empty
                     <h3 class="text-danger">Pas des partenaire disponible</h3>
                     @endforelse
-                   
-                  
+
+
                 </div>
             </div>
         </div>
@@ -359,9 +362,9 @@
                         </div>
                     </div>
                     @empty
-                        
-                    @endforelse                      
-                        
+
+                    @endforelse
+
                     </div>
                 </div>
             </div>

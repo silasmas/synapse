@@ -22,31 +22,31 @@
         <div class="topbar-area style1">
             <div class="container custom">
                 <div class="row y-middle">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="topbar-contact">
                            <ul>
                                <li>
                                    <i class="flaticon-email"></i>
-                                   <a href="mailto:contact@momentum-academie.com">contact@synapse.com</a>
+                                   <a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a>
                                </li>
                                <li>
                                    <i class="flaticon-call"></i>
-                                   <a href="tel:(+1)9999999999"> (+1) 9999 999 999</a>
+                                   <a href="tel:(+243)999930158">(+243)999930158</a>
                                </li>
                                <li>
                                    <i class="flaticon-location"></i>
-                                   55 Gerad Lane,  NY 11201, USA
+                                  Imm botour ogefrem-Local 14, Kin-Gombe
                                </li>
                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-5 text-right">
+                    <div class="col-lg-4 text-right">
                         <div class="toolbar-sl-share">
                             <ul>
-                                 <li class="opening"> <em><i class="flaticon-clock"></i>Lundi - Dimanche / 8H - 19H</em> </li>
-                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                 <li class="opening"> <em><i class="flaticon-clock"></i>Lundi - Vendredi / 8H30' - 15H30'</em> </li>
+                                 <li><a href="https://web.facebook.com/profile.php?id=100080432703036" target="blank"><i class="fa fa-facebook"></i></a></li>
+                                 <li><a href="https://www.instagram.com/synapsegroup4/" target="blank"><i class="fa fa-instagram"></i></a></li>
+                                 <li><a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="blank"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -131,7 +131,15 @@
             </div>
             <div class="offcanvas-text">
                 <p>
-                    We denounce with righteous indig nation in and dislike men who are so beguiled and to demo realized, that they data forest see best business consulting wordpress theme 2021.
+                    Nous visons à transformer les potentiels de la RDC et de l'Afrique en
+                    richesse stable et durable au travers nos différents secteurs
+                    d’activités.
+                    Nous sommes appelés à autonomiser et de soutenir les petits et
+                    moyens producteurs alimentaires africains engagés dans la lutte
+                    contre la pauvreté, le chômage et l'insécurité alimentaire à travers
+                    notre modèle commercial principal par abonnement, une solution
+                    basée sur une configuration sur base d’une répartition des dividendes
+                    de manière équitable.
                 </p>
             </div>
             <div class="media-img">
@@ -144,8 +152,8 @@
                             <i class="flaticon-location"></i>
                         </div>
                         <div class="info-content">
-                            <h4 class="title">Address</h4>
-                            <em>05 kandi BR. New York</em>
+                            <h4 class="title">Addresse</h4>
+                            <em>Imm botour ogefrem-Local 14, Kin-Gombe</em>
                         </div>
                     </div>
                     <div class="address-list">
@@ -154,7 +162,7 @@
                         </div>
                         <div class="info-content">
                             <h4 class="title">Email</h4>
-                            <em><a href="mailto:contact@momentum-academie.com">Contact@synapse.com</a></em>
+                            <em><a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a></em>
                         </div>
                      </div>
                     <div class="address-list">
@@ -163,14 +171,20 @@
                         </div>
                         <div class="info-content">
                           <h4 class="title">Phone</h4>
-                          <em>+019988772</em>
+                          <em> <a href="tel:(+243)999930158">(+243)999930158</a></em>
                         </div>
                     </div>
                 </div>
                 <ul class="social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                    <li>
+                        <a href="https://web.facebook.com/profile.php?id=100080432703036" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/synapsegroup4/" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -201,7 +215,7 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Address</h4>
-                              <em>05 kandi BR. New York</em>
+                              <em>Imm botour ogefrem-Local 14, Kin-Gombe</em>
                           </div>
                       </div>
                       <div class="address-list">
@@ -210,7 +224,9 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Email</h4>
-                              <em><a href="mailto:contact@momentum-academie.com">contact@momentum-academie.com</a></em>
+                              <em>
+                                <a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a>    
+                            </em>
                           </div>
                       </div>
                       <div class="address-list">
@@ -219,7 +235,7 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Phone</h4>
-                              <em>+019988772</em>
+                              <em> <a href="tel:(+243)999930158">(+243)999930158</a></em>
                           </div>
                       </div>
                   </div>
