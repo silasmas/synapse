@@ -23,7 +23,7 @@
             <div class="topbar-area style1">
                 <div class="container custom">
                     <div class="row y-middle">
-                        <div class="col-lg-7">
+                        <div class="col-lg-8">
                             <div class="topbar-contact">
                                 <ul>
                                     <li>
@@ -41,7 +41,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-5 text-right">
+                        <div class="col-lg-4 text-right">
                             <div class="toolbar-sl-share">
                                 <ul>
                                     <li class="opening"> <em><i class="flaticon-clock"></i>Lundi - Vendredi / 8H30' - 15H30'</em> </li>
