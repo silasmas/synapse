@@ -28,15 +28,15 @@
                                 <ul>
                                     <li>
                                         <i class="flaticon-email"></i>
-                                        <a href="mailto:info@bizup.com">info@bizup.com</a>
+                                        <a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a>
                                     </li>
                                     <li>
                                         <i class="flaticon-call"></i>
-                                        <a href="tel:(+1)9999999999"> (+1) 9999 999 999</a>
+                                        <a href="tel:(+243)999930158">(+243)999930158</a>
                                     </li>
                                     <li>
                                         <i class="flaticon-location"></i>
-                                        55 Gerad Lane, NY 11201, USA
+                                        Imm botour ogefrem-Local 14, Kin-Gombe
                                     </li>
                                 </ul>
                             </div>
@@ -44,11 +44,10 @@
                         <div class="col-lg-5 text-right">
                             <div class="toolbar-sl-share">
                                 <ul>
-                                    <li class="opening"> <em><i class="flaticon-clock"></i>Monday - Friday / 8AM -
-                                            11PM</em> </li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="opening"> <em><i class="flaticon-clock"></i>Lundi - Vendredi / 8H30' - 15H30'</em> </li>
+                                    <li><a href="https://web.facebook.com/profile.php?id=100080432703036" target="blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/synapsegroup4/" target="blank"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="blank"><i class="fa fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>

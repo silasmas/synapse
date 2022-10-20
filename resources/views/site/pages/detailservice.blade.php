@@ -18,6 +18,12 @@
     <div class="rs-project style1 red-overly-bg pt-100 pb-100 md-pt-70 md-pb-70">
         <div class="container">
             <div class="row">
+                <h3>Description de la branche</h3>
+<p>
+    {!! $oneBranche->description!!}
+</p>
+            </div>
+            <div class="row">
                 @forelse ($oneBranche->service as $b)
                      <div class="col-lg-4 col-md-6 mb-30">
                     <div class="project-item">
