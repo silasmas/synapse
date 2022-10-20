@@ -168,7 +168,11 @@
                             </div>
                             <div class="content-part">
                                 <h3 class="title"><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></h3>
-                                <div class="desc"> {!! Str::limit(strip_tags($b->description) , 200, '...') !!}</div>
+                                <div class="desc">
+                                    <p>
+                                        {!! Str::limit(strip_tags($b->description) , 200, '...') !!}
+                                    </p>
+                                </div>
                                 <a href="{{ route('detailBranches', ['id'=>$b->id]) }}" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                             </div>
                         </div>
