@@ -3,7 +3,7 @@
 @section("content")
 
 <!-- Breadcrumbs Start -->
-<div class="rs-breadcrumbs img10" style="background: url('{{ asset(" storage/".$oneBranche->image) }}')">
+<div class="rs-breadcrumbs img10" style="background: url('{{ asset("storage/".$oneBranche->image) }}')">
     <div class="container">
         <div class="breadcrumbs-inner">
             <h1 class="page-title">
