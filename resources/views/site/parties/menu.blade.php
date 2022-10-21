@@ -1,13 +1,13 @@
 <div class="offwrap"></div>
 
 <!--Preloader start here-->
-<div id="pre-load">
+{{-- <div id="pre-load">
    <div id="loader" class="loader">
        <div class="loader-container">
            <div class='loader-icon'><img src="{{ asset('assets/images/logo.png') }}" alt="Group synapse"></div>
        </div>
    </div>
-</div>
+</div> --}}
 <!--Preloader area end here-->
 
 <!-- Main content Start -->
@@ -225,7 +225,7 @@
                           <div class="info-content">
                               <h4 class="title">Email</h4>
                               <em>
-                                <a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a>    
+                                <a href="mailto:info@groupsynapse.org">Info@groupsynapse.org</a>
                             </em>
                           </div>
                       </div>
