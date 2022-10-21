@@ -14,7 +14,7 @@
                     </div>
                     <div class="content-part">
                         <h3 class="title"><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></h3>
-                        <div class="desc"> {!!$b->description !!}</div>
+                        <div class="desc">  {!! Str::limit($b->description, 300, '...') !!}</div>
                         <a href="#" class="mt-3 d-block" style="font-weight: 600">Savoir plus</a>
                     </div>
                 </div>

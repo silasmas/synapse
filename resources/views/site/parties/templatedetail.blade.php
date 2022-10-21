@@ -17,7 +17,7 @@
 
     <!--Full width header Start-->
     <div class="full-width-header">
-        <!--Header Start-->
+        <!--Header Start--> 
         <header id="rs-header" class="rs-header header-transparent">
             <!-- Topbar Area Start -->
             <div class="topbar-area style1">
