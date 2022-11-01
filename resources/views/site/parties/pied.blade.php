@@ -12,7 +12,7 @@
             </button>
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="search-block clearfix">
+                    <div class="clearfix search-block">
                         <form>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Search Here..." type="text">
