@@ -29,10 +29,10 @@
                               <a href="https://web.facebook.com/profile.php?id=100080432703036" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
                           </li>
                           <li>
-                              <a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
+                              <a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA/featured" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
                           </li>
                           <li>
-                              <a href="https://www.instagram.com/synapsegroup4/" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                              <a href="https://www.instagram.com/synapsegroupe4/" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
                           </li>
 
                       </ul>
@@ -43,7 +43,7 @@
 
                           @forelse ($branches as $b)
                           <li><a href="{{ route('detailBranches', ['id'=>$b->id]) }}">{{ $b->titre }}</a></li>
-                          
+
                           @empty
                               <h3 class="text-danger">Pas des branches disponible</h3>
                           @endforelse

@@ -45,8 +45,8 @@
                             <ul>
                                  <li class="opening"> <em><i class="flaticon-clock"></i>Lundi - Vendredi / 8H30' - 15H30'</em> </li>
                                  <li><a href="https://web.facebook.com/profile.php?id=100080432703036" target="blank"><i class="fa fa-facebook"></i></a></li>
-                                 <li><a href="https://www.instagram.com/synapsegroup4/" target="blank"><i class="fa fa-instagram"></i></a></li>
-                                 <li><a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="blank"><i class="fa fa-youtube"></i></a></li>
+                                 <li><a href="https://www.instagram.com/synapsegroupe4/" target="blank"><i class="fa fa-instagram"></i></a></li>
+                                 <li><a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA/featured" target="blank"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -180,10 +180,10 @@
                         <a href="https://web.facebook.com/profile.php?id=100080432703036" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
+                        <a href="https://www.youtube.com/channel/UCQV81mSQQcrwTe44r7BQGLA/featured" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/synapsegroup4/" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                        <a href="https://www.instagram.com/synapsegroupe4/" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
                     </li>
                 </ul>
             </div>
