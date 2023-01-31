@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
-/**  
+/**
 * -----------------------------------------------------------------------------
 *
 * Template : Bizup  Consulting Business HTML Template
 * Author : reacthemes
-* Author URI : https://reactheme.com/ 
+* Author URI : https://reactheme.com/
 * Version: 1.0
 *
-* -----------------------------------------------------------------------------   
+* -----------------------------------------------------------------------------
     TABLE OF CONTENT
 ---------------------------------------------------------
     01. General CSS
@@ -28,7 +28,7 @@
     16. Choose Us Section CSS
     17. Team Section CSS
     18. Process Section CSS
-    19. Pricing Section CSS  
+    19. Pricing Section CSS
     20. Project Section CSS
     21. Partner Section CSS
     22. Blog Section CSS
@@ -6040,7 +6040,7 @@ body .search-modal .close:hover {
 .rs-patter-section .logo-img a .mains-logos {
   transition: all 0.3s ease-in-out;
   display: block;
-  filter: grayscale(1);
+  filter: grayscale(0%);
 }
 .rs-patter-section .logo-img a:hover .hovers-logos {
   display: block;
@@ -6053,7 +6053,7 @@ body .search-modal .close:hover {
   display: block;
   visibility: hidden;
   transform: translateY(100%);
-  filter: grayscale(1);
+  filter: grayscale(0%);
 }
 .rs-patter-section.style1 .logo-img {
   padding: 0 50px;
